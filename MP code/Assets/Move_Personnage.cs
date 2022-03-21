@@ -137,4 +137,9 @@ public class Move_Personnage : MonoBehaviour
         cam.transform.localEulerAngles = Vector3.right*smoothPitch;
 
     }
+
+    public void setEnable(bool b)
+    {
+        disabled = !b;
+    }
 }

@@ -7,6 +7,7 @@ public class Objet_Main : MonoBehaviour
     // Start is called before the first frame update
     private bool playerCollision;
     private GameObject player;
+    public int cartValue = 1;
     void Start()
     {
         playerCollision = false;
@@ -17,8 +18,8 @@ public class Objet_Main : MonoBehaviour
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.E ) && playerCollision == true) {
-            
-            player.GetComponent <Interaction_Objet>().EnableCard();
+
+            player.GetComponent<Interaction_Objet>().SetCard(cartValue);
             Destroy(gameObject);
 
             }
