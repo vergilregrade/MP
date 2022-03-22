@@ -4,29 +4,39 @@ using UnityEngine;
 
 public class Mac_collision_trigger : MonoBehaviour
 {
-    private bool playerCollision;
-    private GameObject player;
+    //private bool playerCollision;
+    //private GameObject player;
     public GameObject screen;
+    public Camera cam;
 
-    void OnTriggerEnter(Collider other)
+    public void setScreenEnable(GameObject p)
     {
-
-        if (other.gameObject.tag == "Player")
-        {
-            print("ok");
-            player = other.gameObject;
-            playerCollision = true;
-            screen.GetComponent<ScreenInteraction>().setPlayerTriggerEnter(player);
-        }
-
+        screen.GetComponent<ScreenInteraction>().SetEnable(p);
+        cam.enabled = true;
     }
-
-    void OnTriggerExit(Collider other)
+    public void setCamEnable(bool b)
     {
-        if (other.gameObject.tag == "Player")
-        {
-            playerCollision = false;
-            screen.GetComponent<ScreenInteraction>().setPlayerTriggerEExit();
-        }
+        cam.enabled = b;
     }
+    //void OnTriggerEnter(Collider other)
+    //{
+
+    //    if (other.gameObject.tag == "Player")
+    //    {
+    //        print("ok");
+    //        player = other.gameObject;
+    //        playerCollision = true;
+    //        screen.GetComponent<ScreenInteraction>().setPlayerTriggerEnter(player);
+    //    }
+
+    //}
+
+    //void OnTriggerExit(Collider other)
+    //{
+    //    if (other.gameObject.tag == "Player")
+    //    {
+    //        playerCollision = false;
+    //        screen.GetComponent<ScreenInteraction>().setPlayerTriggerEExit();
+    //    }
+    //}
 }

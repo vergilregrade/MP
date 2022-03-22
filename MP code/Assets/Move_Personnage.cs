@@ -101,7 +101,11 @@ public class Move_Personnage : MonoBehaviour
             lastGroundedTime = Time.time;
             verticalVelocity = 0;
         }
-
+        if(flags == CollisionFlags.Above)
+        {
+            verticalVelocity = -2;
+            velocity = new Vector3(velocity.x, verticalVelocity, velocity.z);
+        }
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
@@ -141,5 +145,10 @@ public class Move_Personnage : MonoBehaviour
     public void setEnable(bool b)
     {
         disabled = !b;
+    }
+
+    public void SetCamEnable(bool b)
+    {
+        cam.enabled = b;
     }
 }
