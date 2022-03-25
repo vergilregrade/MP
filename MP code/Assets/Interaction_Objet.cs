@@ -6,7 +6,13 @@ public class Interaction_Objet : MonoBehaviour
 
 {
     public GameObject card;
+    private GameObject cable;
+    private bool cableGrab = false;
     public int CardValue = 0;
+
+    public GameObject model_cable;
+
+
 
     Camera cam;
     // Start is called before the first frame update
@@ -14,6 +20,8 @@ public class Interaction_Objet : MonoBehaviour
     {
         cam = Camera.main;
         card.SetActive(false);
+
+        
     }
 
     // Update is called once per frame
@@ -26,7 +34,7 @@ public class Interaction_Objet : MonoBehaviour
             Debug.DrawRay(cam.transform.position, cam.transform.TransformDirection(Vector3.forward) * 3, Color.red);
             if (Physics.Raycast(hitRay, out hit, 3))
             {
-                print(hit.collider.tag);
+                print(hit.collider.name + " " + hit.collider.tag);
                 if (hit.collider.tag == "Key")
                 {
                     card.SetActive(true);
@@ -42,6 +50,42 @@ public class Interaction_Objet : MonoBehaviour
                 else if (hit.collider.tag == "Safe")
                 {
                     hit.collider.gameObject.GetComponent<Coffre_action>().PlayerInteract(this.gameObject);
+                }
+                else if (hit.collider.tag == "Cable")
+                {
+                    if(!cableGrab)
+                    {
+                        cable = hit.collider.gameObject;
+                        cable.transform.position = card.transform.position;
+                        cable.transform.SetParent(cam.transform);
+                        cable.GetComponent<cable_interact>().grabed();
+                        cableGrab = true;
+                    }
+                    
+                }
+                else if(hit.collider.tag == "port")
+                {
+                    if(cableGrab)
+                    {
+                        GameObject c_port = hit.collider.gameObject;
+                        GameObject c_parent = c_port.transform.parent.gameObject;
+                        GameObject c_prise;
+                        if (!cable.GetComponent<cable_interact>().isP1IsSet())
+                        {
+                            c_prise = cable.GetComponent<cable_interact>().setP1();
+                        }
+                        else
+                        {
+                            c_prise = cable.GetComponent<cable_interact>().setP2();
+                        }
+                        c_parent.gameObject.GetComponent<Port_Interaction>().connectP(c_port, c_prise);
+                        cableGrab = cable.GetComponent<cable_interact>().isIsGrad();
+                        print(cableGrab);
+                    }
+                }
+                else if(hit.collider.tag == "prise")
+                {
+
                 }
             }
         }

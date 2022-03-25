@@ -7,6 +7,9 @@ TagManager:
   - Key
   - Mac
   - Safe
+  - Cable
+  - port
+  - prise
   layers:
   - Default
   - TransparentFX
