@@ -10,6 +10,7 @@ TagManager:
   - Cable
   - port
   - prise
+  - grabedPrise
   layers:
   - Default
   - TransparentFX

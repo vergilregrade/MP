@@ -12,7 +12,8 @@ public class Interaction_Objet : MonoBehaviour
 
     public GameObject model_cable;
 
-
+    private bool _priseGrab = false;
+    private GameObject _prise;
 
     Camera cam;
     // Start is called before the first frame update
@@ -32,10 +33,18 @@ public class Interaction_Objet : MonoBehaviour
             RaycastHit hit;
             Ray hitRay = new Ray(cam.transform.position, cam.transform.TransformDirection(Vector3.forward));
             Debug.DrawRay(cam.transform.position, cam.transform.TransformDirection(Vector3.forward) * 3, Color.red);
-            if (Physics.Raycast(hitRay, out hit, 3))
+
+            if (_priseGrab)
+            {
+                _prise.GetComponent<Prise_Control>().setGrab(false);
+                _prise = null;
+                _priseGrab = false;
+            }
+            else if (Physics.Raycast(hitRay, out hit, 3))
             {
                 print(hit.collider.name + " " + hit.collider.tag);
-                if (hit.collider.tag == "Key")
+                
+                 if (hit.collider.tag == "Key")
                 {
                     card.SetActive(true);
                     CardValue = hit.collider.gameObject.GetComponent<Objet_Main>().getCartValue();
@@ -83,9 +92,11 @@ public class Interaction_Objet : MonoBehaviour
                         print(cableGrab);
                     }
                 }
-                else if(hit.collider.tag == "prise")
+                else if(hit.collider.tag == "grabedPrise")
                 {
-
+                    _priseGrab = true;
+                    hit.collider.gameObject.GetComponent<Prise_Control>().setGrab(true, card);
+                    _prise = hit.collider.gameObject;
                 }
             }
         }
