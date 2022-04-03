@@ -22,9 +22,9 @@ public class cable_Render : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        for(int i =0;i<cubes.Length;i++)
+        for (int i =0;i<cubes.Length;i++)
         {
-            l_render.GetComponent<LineRenderer>().SetPosition(i, cubes[i].transform.localPosition);
+            l_render.GetComponent<LineRenderer>().SetPosition(i, cubes[i].transform.localPosition); 
         }
     }
 }

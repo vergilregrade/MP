@@ -16,6 +16,8 @@ public class Interaction_Objet : MonoBehaviour
     private GameObject _prise;
 
     Camera cam;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -34,17 +36,47 @@ public class Interaction_Objet : MonoBehaviour
             Ray hitRay = new Ray(cam.transform.position, cam.transform.TransformDirection(Vector3.forward));
             Debug.DrawRay(cam.transform.position, cam.transform.TransformDirection(Vector3.forward) * 3, Color.red);
 
-            if (_priseGrab)
-            {
-                _prise.GetComponent<Prise_Control>().setGrab(false);
-                _prise = null;
-                _priseGrab = false;
-            }
-            else if (Physics.Raycast(hitRay, out hit, 3))
+            //if (_priseGrab)
+            //{
+            //    _prise.GetComponent<Prise_Control>().setGrab(false);
+            //    _prise = null;
+            //    _priseGrab = false;
+            //}
+            //else
+
+
+            if (Physics.Raycast(hitRay, out hit, 3))
             {
                 print(hit.collider.name + " " + hit.collider.tag);
-                
-                 if (hit.collider.tag == "Key")
+                if (_priseGrab)
+                {
+
+
+
+                    if (hit.collider.tag == "port")
+                    {
+                        GameObject c_port = hit.collider.gameObject;
+                        GameObject c_parent = c_port.transform.parent.gameObject;
+                        if (c_parent.gameObject.GetComponent<Port_Interaction>().PlugPrise(c_port, _prise))
+                        {
+                            _prise = null;
+                            _priseGrab = false;
+                        }
+
+                        //_prise.gameObject.GetComponent<Prise_Control>().setGrab(true, c_port);
+                    }
+                    else
+                    {
+                        _prise.GetComponent<Prise_Control>().setGrab(false);
+                        _prise = null;
+                        _priseGrab = false;
+                    }
+
+                    return;
+                }
+
+
+                if (hit.collider.tag == "Key")
                 {
                     card.SetActive(true);
                     CardValue = hit.collider.gameObject.GetComponent<Objet_Main>().getCartValue();
@@ -60,43 +92,60 @@ public class Interaction_Objet : MonoBehaviour
                 {
                     hit.collider.gameObject.GetComponent<Coffre_action>().PlayerInteract(this.gameObject);
                 }
-                else if (hit.collider.tag == "Cable")
+                //else if (hit.collider.tag == "Cable")
+                //{
+                //    if(!cableGrab)
+                //    {
+                //        cable = hit.collider.gameObject;
+                //        cable.transform.position = card.transform.position;
+                //        cable.transform.SetParent(cam.transform);
+                //        cable.GetComponent<cable_interact>().grabed();
+                //        cableGrab = true;
+                //    }
+
+                //}
+                else if (hit.collider.tag == "port")
                 {
-                    if(!cableGrab)
-                    {
-                        cable = hit.collider.gameObject;
-                        cable.transform.position = card.transform.position;
-                        cable.transform.SetParent(cam.transform);
-                        cable.GetComponent<cable_interact>().grabed();
-                        cableGrab = true;
-                    }
-                    
-                }
-                else if(hit.collider.tag == "port")
-                {
-                    if(cableGrab)
+                    if (!_priseGrab)
                     {
                         GameObject c_port = hit.collider.gameObject;
                         GameObject c_parent = c_port.transform.parent.gameObject;
-                        GameObject c_prise;
-                        if (!cable.GetComponent<cable_interact>().isP1IsSet())
-                        {
-                            c_prise = cable.GetComponent<cable_interact>().setP1();
-                        }
-                        else
-                        {
-                            c_prise = cable.GetComponent<cable_interact>().setP2();
-                        }
-                        c_parent.gameObject.GetComponent<Port_Interaction>().connectP(c_port, c_prise);
-                        cableGrab = cable.GetComponent<cable_interact>().isIsGrad();
-                        print(cableGrab);
+                        _prise = c_parent.GetComponent<Port_Interaction>().UnplugPrise(c_port, card);
+                        _priseGrab = _prise != null;
                     }
+                    //if(cableGrab)
+                    //{
+                    //    GameObject c_port = hit.collider.gameObject;
+                    //    GameObject c_parent = c_port.transform.parent.gameObject;
+                    //    GameObject c_prise;
+                    //    if (!cable.GetComponent<cable_interact>().isP1IsSet())
+                    //    {
+                    //        c_prise = cable.GetComponent<cable_interact>().setP1();
+                    //    }
+                    //    else
+                    //    {
+                    //        c_prise = cable.GetComponent<cable_interact>().setP2();
+                    //    }
+                    //    c_parent.gameObject.GetComponent<Port_Interaction>().connectP(c_port, c_prise);
+                    //    cableGrab = cable.GetComponent<cable_interact>().isIsGrad();
+                    //    print(cableGrab);
+                    //}
                 }
-                else if(hit.collider.tag == "grabedPrise")
+                else if (hit.collider.tag == "grabedPrise")
                 {
                     _priseGrab = true;
                     hit.collider.gameObject.GetComponent<Prise_Control>().setGrab(true, card);
                     _prise = hit.collider.gameObject;
+                }
+
+            }
+            else
+            {
+                if (_priseGrab)
+                {
+                    _prise.GetComponent<Prise_Control>().setGrab(false);
+                    _prise = null;
+                    _priseGrab = false;
                 }
             }
         }
