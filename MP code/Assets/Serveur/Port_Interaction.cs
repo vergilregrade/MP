@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class Port_Interaction : MonoBehaviour
 {
     
@@ -18,6 +19,8 @@ public class Port_Interaction : MonoBehaviour
         for(int i=0;i<_port.Count;i++)
         {
             _portPluged[i] = false;
+            _port[i].GetComponent<Port_comportement>().setParent(this.gameObject);
+            _port[i].GetComponent<Port_comportement>().setText(i.ToString());
         }
     }
 
@@ -39,6 +42,8 @@ public class Port_Interaction : MonoBehaviour
                 if(_portConnect[elem.x].transform.parent == _portConnect[elem.y].transform.parent)
                 {
                     print("ca marche !!!");
+                    _port[elem.x].GetComponent<Port_comportement>().setIsGoodConnect(true);
+                    _port[elem.y].GetComponent<Port_comportement>().setIsGoodConnect(true);
                 }
             }
         }
@@ -57,6 +62,17 @@ public class Port_Interaction : MonoBehaviour
         prisePlayer.GetComponent<Prise_Control>().setGrab(true, player);
         _port[index].GetComponent<MeshRenderer>().enabled = true;
         _portPluged[index] = false;
+
+        foreach (Vector2Int elem in _pair2set)
+        {
+            if ((index == elem.x && _portPluged[elem.y]) || (index == elem.y && _portPluged[elem.x]))
+            {
+                _port[elem.x].GetComponent<Port_comportement>().setIsGoodConnect(false);
+                _port[elem.y].GetComponent<Port_comportement>().setIsGoodConnect(false);
+            }
+        }
+
+
         return prisePlayer;
     }
 
