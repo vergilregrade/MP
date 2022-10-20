@@ -11,6 +11,10 @@ TagManager:
   - port
   - prise
   - grabedPrise
+  - Fusible
+  - Fusible_door
+  - Fusible_levier
+  - Fusible_place
   layers:
   - Default
   - TransparentFX

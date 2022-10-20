@@ -11,6 +11,7 @@ public class Interaction_Objet : MonoBehaviour
     public int CardValue = 0;
 
     private List<int> list_key;
+    private int count_Fusible = 0;
 
     public GameObject model_cable;
 
@@ -85,7 +86,7 @@ public class Interaction_Objet : MonoBehaviour
                     //CardValue = hit.collider.gameObject.GetComponent<Objet_Main>().getCartValue();
                     list_key.Add(hit.collider.gameObject.GetComponent<Objet_Main>().getCartValue());
                     Destroy(hit.collider.gameObject);
-                    
+
                 }
                 else if (hit.collider.tag == "Mac")
                 {
@@ -97,10 +98,31 @@ public class Interaction_Objet : MonoBehaviour
                 {
                     //hit.collider.gameObject.GetComponent<Coffre_action>().PlayerInteract(this.gameObject);
                     print("ok");
-                    foreach(int key in list_key)
+                    foreach (int key in list_key)
                     {
                         hit.collider.gameObject.GetComponent<Coffre_action>().Try_Key(key);
                         print(key);
+                    }
+                }
+                else if (hit.collider.tag == "Fusible")
+                {
+                    count_Fusible++;
+                    Destroy(hit.collider.gameObject);
+                }
+                else if (hit.collider.tag == "Fusible_door")
+                {
+                    hit.collider.gameObject.GetComponent<Door_s>().changement_etat();
+                }
+                else if (hit.collider.tag == "Fusible_levier")
+                {
+                    hit.collider.gameObject.GetComponent<levier_s>().changement_etat();
+                }
+                else if (hit.collider.tag == "Fusible_place")
+                {
+                    if(count_Fusible > 0)
+                    {
+                        hit.collider.gameObject.GetComponent<fusible_s>().set_fusible();
+                        count_Fusible--;
                     }
                 }
                 //else if (hit.collider.tag == "Cable")

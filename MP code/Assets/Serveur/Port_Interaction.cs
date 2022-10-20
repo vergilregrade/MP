@@ -76,4 +76,13 @@ public class Port_Interaction : MonoBehaviour
         return prisePlayer;
     }
 
+    public void activate()
+    {
+        foreach(GameObject obj in _port)
+        {
+            print("port");
+            obj.GetComponent<Port_comportement>().set_online();
+        }
+    }
+
 }
