@@ -10,6 +10,8 @@ public class Interaction_Objet : MonoBehaviour
     private bool cableGrab = false;
     public int CardValue = 0;
 
+    private List<int> list_key;
+
     public GameObject model_cable;
 
     private bool _priseGrab = false;
@@ -23,8 +25,9 @@ public class Interaction_Objet : MonoBehaviour
     {
         cam = Camera.main;
         card.SetActive(false);
+        list_key = new List<int>();
 
-        
+
     }
 
     // Update is called once per frame
@@ -78,9 +81,11 @@ public class Interaction_Objet : MonoBehaviour
 
                 if (hit.collider.tag == "Key")
                 {
-                    card.SetActive(true);
-                    CardValue = hit.collider.gameObject.GetComponent<Objet_Main>().getCartValue();
+                    //card.SetActive(true);
+                    //CardValue = hit.collider.gameObject.GetComponent<Objet_Main>().getCartValue();
+                    list_key.Add(hit.collider.gameObject.GetComponent<Objet_Main>().getCartValue());
                     Destroy(hit.collider.gameObject);
+                    
                 }
                 else if (hit.collider.tag == "Mac")
                 {
@@ -90,7 +95,13 @@ public class Interaction_Objet : MonoBehaviour
                 }
                 else if (hit.collider.tag == "Safe")
                 {
-                    hit.collider.gameObject.GetComponent<Coffre_action>().PlayerInteract(this.gameObject);
+                    //hit.collider.gameObject.GetComponent<Coffre_action>().PlayerInteract(this.gameObject);
+                    print("ok");
+                    foreach(int key in list_key)
+                    {
+                        hit.collider.gameObject.GetComponent<Coffre_action>().Try_Key(key);
+                        print(key);
+                    }
                 }
                 //else if (hit.collider.tag == "Cable")
                 //{

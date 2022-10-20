@@ -53,6 +53,24 @@ public class Coffre_action : MonoBehaviour
 
         }
     }
+
+    public bool Try_Key(int key_val)
+    {
+        if(!isOpen)
+        {
+            if(key_val == CardValue)
+            {
+                Open();
+                isOpen = true;
+                return true;
+            }
+        }
+        else
+        {
+            Close();
+        }
+        return false;
+    }
     void Update()
     {
         //if (Input.GetKeyDown(KeyCode.E) && playerCollision)
