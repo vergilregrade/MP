@@ -94,6 +94,12 @@ public class Interaction_Objet : MonoBehaviour
                     this.GetComponent<Move_Personnage>().setEnable(false);
                     this.GetComponent<Move_Personnage>().SetCamEnable(false);
                 }
+                else if (hit.collider.tag == "Digicode")
+                {
+                    hit.collider.gameObject.GetComponent<digicode_s>().setScreenEnable(this.gameObject);
+                    this.GetComponent<Move_Personnage>().setEnable(false);
+                    this.GetComponent<Move_Personnage>().SetCamEnable(false);
+                }
                 else if (hit.collider.tag == "Safe")
                 {
                     //hit.collider.gameObject.GetComponent<Coffre_action>().PlayerInteract(this.gameObject);

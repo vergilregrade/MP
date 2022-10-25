@@ -15,6 +15,7 @@ TagManager:
   - Fusible_door
   - Fusible_levier
   - Fusible_place
+  - Digicode
   layers:
   - Default
   - TransparentFX

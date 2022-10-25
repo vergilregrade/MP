@@ -24,11 +24,12 @@ public class ScreenInteraction : MonoBehaviour
     public GameObject o_monitor;
 
 
-    string head = ">";
+    string head = "$";
     string currentCommand = "";
 
-
-
+    private string[] commandHistorique = { "" };
+    private int indexCommand = 0;
+    private List<string> test = new List<string>();
 
 
     void Start()
@@ -51,22 +52,53 @@ public class ScreenInteraction : MonoBehaviour
                 return;
             }
             string screen = Input.inputString;
-            switch(screen[0])
+            if (Input.GetKeyDown(KeyCode.UpArrow))
             {
-                case (char) 0:
-                    return;
-                case (char) 13://enter
-                    nextCurrentLine(currentCommand);
-                    action();
-                    currentCommand = "";
-                    printToMonitor(head);
-                    break;
-                case (char) 8://bask space
-                    currentCommand = currentCommand.Remove(currentCommand.Length - 1);
-                    break;
-                default:
-                    currentCommand += screen[0];
-                    break;
+                currentCommand = test[indexCommand];
+                indexCommand = (indexCommand > 0) ? indexCommand - 1 : indexCommand;
+            }
+            else if (Input.GetKeyDown(KeyCode.DownArrow))
+            {
+                if (indexCommand == test.Count-1)
+                {
+                    currentCommand = ""; return;
+                }
+                indexCommand = (indexCommand < test.Count-1) ? indexCommand + 1 : indexCommand;
+
+                currentCommand = test[indexCommand];
+            }
+            else
+            {
+                if (screen.Length > 0)
+                {
+
+                    indexCommand = test.Count - 1;
+                    switch (screen[0])
+                    {
+                        case (char)0:
+                            return;
+                        case (char)13://enter
+                            nextCurrentLine(currentCommand);
+                            //action();
+                            this.GetComponent<action>().exec(currentCommand);
+                            if (currentCommand != "")
+                            {
+                                test.Add(currentCommand);
+                                indexCommand++;
+                                currentCommand = "";
+                            }
+                            
+                            printToMonitor(head);
+                            break;
+                        case (char)8://bask space
+                            if (currentCommand.Length == 0) { break; }
+                            currentCommand = currentCommand.Remove(currentCommand.Length - 1);
+                            break;
+                        default:
+                            currentCommand += screen[0];
+                            break;
+                    }
+                }
             }
             clearCurrentLine(); printToMonitor(head);
             printToMonitor(currentCommand);
@@ -74,7 +106,7 @@ public class ScreenInteraction : MonoBehaviour
 
         }
     }
-    private void printToMonitor(String s)
+    public void printToMonitor(String s)
     {
         string toPrint = "";
         int total_len = currentColonne + s.Length;
@@ -86,7 +118,7 @@ public class ScreenInteraction : MonoBehaviour
         }
         
     }
-    private void printMonitor()
+    public void printMonitor()
     {
         string to_print = "";
         for (int y = 0; y < nbLingne; y++)
@@ -99,14 +131,31 @@ public class ScreenInteraction : MonoBehaviour
         }
         textDisplay.text = to_print;
     }
-    private void nextCurrentLine(string s)
+    public void nextCurrentLine(string s)
     {
         clearCurrentLine();
         printToMonitor(s);
-        currentLigne++;
         currentColonne = 0;
+        if (currentLigne == nbLingne-1)//derniere ligne de commande
+        {
+            for(int y = 0; y < currentLigne; y++)
+            {
+                for(int x =0; x<nbColonne;x++)
+                {
+                    monitor[y, x] = monitor[y + 1, x];
+                }
+            }
+            clearCurrentLine();
+            return;
+        }
+        currentLigne++;
+        
     }
-    private void clearCurrentLine()
+    public void nextCurrentLine()
+    {
+        nextCurrentLine(currentCommand);
+    }
+    public void clearCurrentLine()
     {
         for(int x = 0; x < nbColonne; x++)
         {
@@ -258,60 +307,60 @@ public class ScreenInteraction : MonoBehaviour
     //}
 
 
-    private string traitementLigne(int cL)
-    {
-        string ligne = "";
-        for(int i=0;i<nbColonne;i++)
-        {
-            //if (monitor[cL, i] != ' ')
-            //{
-                ligne += monitor[cL, i];
-            //}
-        }
-        string[] strList = ligne.Split(' ');
+    //private string traitementLigne(int cL)
+    //{
+    //    string ligne = "";
+    //    for(int i=0;i<nbColonne;i++)
+    //    {
+    //        //if (monitor[cL, i] != ' ')
+    //        //{
+    //            ligne += monitor[cL, i];
+    //        //}
+    //    }
+    //    string[] strList = ligne.Split(' ');
 
-        if(strList.Length > 0)
-        {
+    //    if(strList.Length > 0)
+    //    {
 
-            switch(strList[0])
-            {
-                case "bitE":
-                    return "UwU";
-                case "enable":
-                    return (enableCisco(strList, 1));
-            }
-        }
+    //        switch(strList[0])
+    //        {
+    //            case "bitE":
+    //                return "UwU";
+    //            case "enable":
+    //                return (enableCisco(strList, 1));
+    //        }
+    //    }
         
 
 
-        if(ligne == "bitE")
-        {
-            return "UwU";
-        }
-        else if(ligne == "cimac")
-        {
-            if(inSwitchMode)
-            {
-                return "error";
-            }
-            inSwitchMode = true;
-            return "clear";
-        }
-        else if(ligne == "tracertNACU.com")
-        {
-            if(inSwitchMode)
-                return "NACU.com - 176.230.23.1";
-            return "error";
-        }
-        else if(ligne == "clear")
-        {
-            return "clear";
-        }
+    //    if(ligne == "bitE")
+    //    {
+    //        return "UwU";
+    //    }
+    //    else if(ligne == "cimac")
+    //    {
+    //        if(inSwitchMode)
+    //        {
+    //            return "error";
+    //        }
+    //        inSwitchMode = true;
+    //        return "clear";
+    //    }
+    //    else if(ligne == "tracertNACU.com")
+    //    {
+    //        if(inSwitchMode)
+    //            return "NACU.com - 176.230.23.1";
+    //        return "error";
+    //    }
+    //    else if(ligne == "clear")
+    //    {
+    //        return "clear";
+    //    }
 
 
-        return "error";
-    }
-    private void clearScreen()
+    //    return "error";
+    //}
+    public void clearScreen()
     {
         currentLigne = 0;
         currentColonne = 0;
@@ -351,14 +400,9 @@ public class ScreenInteraction : MonoBehaviour
         enable = true;
     }
 
-    private string enableCisco(string[] str, int i)
+    public void changeHead(string s)
     {
-        if (inSwitchMode)
-        {
-            return "error";
-        }
-        inSwitchMode = true;
-        return "clear";
+        head = s;
     }
 
 }

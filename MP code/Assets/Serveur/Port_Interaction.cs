@@ -21,13 +21,14 @@ public class Port_Interaction : MonoBehaviour
             _portPluged[i] = false;
             _port[i].GetComponent<Port_comportement>().setParent(this.gameObject);
             _port[i].GetComponent<Port_comportement>().setText(i.ToString());
+            
         }
     }
 
     public bool PlugPrise(GameObject port,GameObject prise)
     {
         int index = _port.IndexOf(port);
-        print("index port :" + index.ToString() + " used ? " + _portPluged[index].ToString());
+        //print("index port :" + index.ToString() + " used ? " + _portPluged[index].ToString());
         if (_portPluged[index]) return false;
         _portPluged[index] = true;
         prise.GetComponent<Prise_Control>().setGrab(true, port);
@@ -35,6 +36,7 @@ public class Port_Interaction : MonoBehaviour
         _port[index].GetComponent<MeshRenderer>().enabled = false;
         //_port[index].GetComponent<Collider>().enabled = false;
 
+        int i = 0;
         foreach(Vector2Int elem in _pair2set)
         {
             if((index==elem.x && _portPluged[elem.y]) || (index == elem.y && _portPluged[elem.x]))
@@ -44,8 +46,10 @@ public class Port_Interaction : MonoBehaviour
                     print("ca marche !!!");
                     _port[elem.x].GetComponent<Port_comportement>().setIsGoodConnect(true);
                     _port[elem.y].GetComponent<Port_comportement>().setIsGoodConnect(true);
+                    this.GetComponent<switch_code_action>().action_connect(i);
                 }
             }
+            i++;
         }
 
         return true;
@@ -62,14 +66,17 @@ public class Port_Interaction : MonoBehaviour
         prisePlayer.GetComponent<Prise_Control>().setGrab(true, player);
         _port[index].GetComponent<MeshRenderer>().enabled = true;
         _portPluged[index] = false;
-
+        int i = 0;
         foreach (Vector2Int elem in _pair2set)
         {
             if ((index == elem.x && _portPluged[elem.y]) || (index == elem.y && _portPluged[elem.x]))
             {
                 _port[elem.x].GetComponent<Port_comportement>().setIsGoodConnect(false);
                 _port[elem.y].GetComponent<Port_comportement>().setIsGoodConnect(false);
+                print("ono !!!");
+                this.GetComponent<switch_code_action>().action_disconnect(i);
             }
+            i++;
         }
 
 
@@ -80,7 +87,7 @@ public class Port_Interaction : MonoBehaviour
     {
         foreach(GameObject obj in _port)
         {
-            print("port");
+            //print("port");
             obj.GetComponent<Port_comportement>().set_online();
         }
     }
