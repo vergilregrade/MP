@@ -55,10 +55,11 @@ public class action : MonoBehaviour
 
     private void defaultSecu(string com, ScreenInteraction monitor)
     {
+        var comSplit = com.Split(" ");
         switch (etat)
         {
             case 0:
-                switch (com)
+                switch (comSplit[0])
                 {
                     case "bitE":
                         monitor.nextCurrentLine("UwU");
@@ -70,8 +71,8 @@ public class action : MonoBehaviour
                             monitor.changeHead("switch$");
                         }
                         return;
-                    case "ssh -l 172.83.236.1":
-                        if (!switchEnable)
+                    case "ssh":
+                        if (!switchEnable && (comSplit[1] == "172.83.236.1" || (comSplit[1] == "-l" && comSplit[2] == "172.83.236.1")))
                         {
                             monitor.nextCurrentLine("ip unreachables");
                             break;

@@ -8,6 +8,7 @@ public class switch_code_action : MonoBehaviour
 {
     public PC pc;
     public GameObject actionMonitor;
+    public GameObject[] ToDisable;
     public void action_connect(int i)
     {
         print("connect"); 
@@ -18,6 +19,10 @@ public class switch_code_action : MonoBehaviour
                 if (i==0)
                 {
                     actionMonitor.GetComponent<action>().enableSwitch(true);
+                    foreach (GameObject obj in ToDisable)
+                    {
+                        obj.SetActive(false);
+                    }
                 }
                 break;
         }
@@ -32,6 +37,10 @@ public class switch_code_action : MonoBehaviour
                 if (i == 0)
                 {
                     actionMonitor.GetComponent<action>().enableSwitch(false);
+                    foreach (GameObject obj in ToDisable)
+                    {
+                        obj.SetActive(true);
+                    }
                 }
                 break;
         }

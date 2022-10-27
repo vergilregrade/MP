@@ -16,6 +16,7 @@ TagManager:
   - Fusible_levier
   - Fusible_place
   - Digicode
+  - Casier
   layers:
   - Default
   - TransparentFX

@@ -115,7 +115,7 @@ public class Interaction_Objet : MonoBehaviour
                     count_Fusible++;
                     Destroy(hit.collider.gameObject);
                 }
-                else if (hit.collider.tag == "Fusible_door")
+                else if (hit.collider.tag == "Fusible_door" || hit.collider.tag == "Casier")
                 {
                     hit.collider.gameObject.GetComponent<Door_s>().changement_etat();
                 }
