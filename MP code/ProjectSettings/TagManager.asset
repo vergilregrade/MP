@@ -17,6 +17,7 @@ TagManager:
   - Fusible_place
   - Digicode
   - Casier
+  - Boitier_Porte_C
   layers:
   - Default
   - TransparentFX

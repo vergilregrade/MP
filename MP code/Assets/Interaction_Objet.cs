@@ -7,7 +7,7 @@ public class Interaction_Objet : MonoBehaviour
 {
     public GameObject card;
     private GameObject cable;
-    private bool cableGrab = false;
+    //private bool cableGrab = false;
     public int CardValue = 0;
 
     private List<int> list_key;
@@ -175,6 +175,17 @@ public class Interaction_Objet : MonoBehaviour
                     _priseGrab = true;
                     hit.collider.gameObject.GetComponent<Prise_Control>().setGrab(true, card);
                     _prise = hit.collider.gameObject;
+                }
+                else if(hit.collider.tag == "Boitier_Porte_C")
+                {
+                    if(list_key.Count == 0)
+                    {
+                        hit.collider.gameObject.GetComponent<boitier_P_C_s>().tryKey(-1);
+                    }else
+                    foreach (int key in list_key)
+                    {
+                        hit.collider.gameObject.GetComponent<boitier_P_C_s>().tryKey(key);
+                    }
                 }
 
             }

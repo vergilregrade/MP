@@ -8,13 +8,35 @@ public enum PC
     TP
 }
 
+public enum SUB_PC
+{
+    NO,
+    TP1,
+    TP2,
+    TP3
+}
+
 public class action : MonoBehaviour
 {
 
     public PC pc;
+    public SUB_PC sub_pc;
     private int etat = 0;
 
     bool switchEnable = false;
+    bool accessMasterConsole = false;
+    bool routUp = false;
+
+    bool net1 = false;
+    bool net2 = false;
+
+    private void Start()
+    {
+        if(pc == PC.TP)
+        {
+            this.GetComponent<ScreenInteraction>().changeHead("MasterConsole>");
+        }
+    }
 
     public void exec(string com)
     {
@@ -140,14 +162,201 @@ public class action : MonoBehaviour
 
     private void defaultTP(string com, ScreenInteraction monitor)
     {
-        switch (com)
+        com = com.ToLower();
+        var comSplit = com.Split(" ");
+        switch (etat)
         {
-            case "e621":
-                monitor.nextCurrentLine("red rocket OwO");
+            case 0:
+                switch (com)
+                {
+                    case "e621":
+                        monitor.nextCurrentLine("red rocket OwO");
+                        return;
+                    case "access master console":
+                        if (sub_pc == SUB_PC.TP2 || sub_pc == SUB_PC.TP1)
+                        {
+                            etat = 1;//connection switch
+                            monitor.changeHead("Password:");
+                        }
+                        return;
+                    case "config router-1":
+                        if (accessMasterConsole)
+                        {
+                            etat = 2;//rout 1
+                            monitor.changeHead("Router-1>");
+                        }
+                        else
+                        {
+                            monitor.nextCurrentLine("error");
+                        }
+                        return;
+                    default:
+                        monitor.nextCurrentLine("error");
+                        return;
+                }
+            case 1:
+                switch (com)
+                {
+                    case "lafauteathanhtong":
+                        monitor.nextCurrentLine("Granted");
+                        etat = 0;
+                        accessMasterConsole = true;
+                        monitor.changeHead("MasterConsole>");
+                        return;
+                    default:
+                        monitor.nextCurrentLine("wrong password");
+                        monitor.changeHead("MasterConsole>");
+                        etat = 0;
+                        return;
+                }
+            case 2:
+                switch (com)
+                {
+                    case "enable":
+                        monitor.changeHead("Router-1#");
+                        etat = 3;
+                        return;
+                    default:
+                        monitor.nextCurrentLine("error");
+                        return;
+                }
+            case 3:
+                switch (com)
+                {
+                    case "configure terminal":
+                        monitor.changeHead("Router-1(config)#");
+                        etat = 4;
+                        return;
+                    case "conf t":
+                        monitor.changeHead("Router-1(config)#");
+                        etat = 4;
+                        return;
+                    default:
+                        monitor.nextCurrentLine("error");
+                        return;
+                }
+            case 4:
+                switch (com)
+                {
+                    case "interface fa0/0":
+                        monitor.changeHead("Router-1(config-if)#");
+                        etat = 5;
+                        return;
+                    case "router rip":
+                        if (routUp)
+                        {
+                            monitor.changeHead("Router-1(config-rip)#");
+                            etat = 7;
+                            return;
+                        }
+                        monitor.nextCurrentLine("error");
+                        return;
+                    default:
+                        monitor.nextCurrentLine("error");
+                        return;
+                }
+            case 5:
+                if (comSplit.Length != 0)
+                {
+                    switch (comSplit[0])
+                    {
+                        case "ip":
+                            if (comSplit.Length != 4)
+                            {
+                                monitor.nextCurrentLine("invalide format");
+                                return;
+                            }
+                            if (comSplit[1] == "adresse" && (comSplit[2] != "192.168.1.254" || comSplit[3] != "255.255.255.0"))
+                            {
+                                monitor.nextCurrentLine("invalide ip");
+                                return;
+                            }
+                            monitor.changeHead("Router-1(config-if)#");
+                            etat = 6;
+                            return;
+                        case "exit":
+                            monitor.changeHead("Router-1(config)#");
+                            etat = 4;
+                            return;
+                        default:
+                            monitor.nextCurrentLine("error");
+                            return;
+                    }
+                }
                 return;
-            default:
-                monitor.nextCurrentLine("error");
-                return;
+            case 6:
+                switch (com)
+                {
+                    case "no shutdown":
+                        monitor.nextCurrentLine("Changed State of fa0/0");
+                        monitor.nextCurrentLine("fa0/1 from DOWN to UP");
+                        etat = 5;
+                        routUp = true;
+                        return;
+                    case "no sh":
+                        monitor.nextCurrentLine("Changed State of fa0/0");
+                        monitor.nextCurrentLine("fa0/1 from DOWN to UP");
+                        etat = 5;
+                        routUp = true;
+                        return;
+                    case "exit":
+                        monitor.changeHead("Router-1(config)#");
+                        etat = 4;
+                        return;
+                    default:
+                        monitor.nextCurrentLine("error");
+                        return;
+                }
+            case 7:
+                switch (com)
+                {
+                    case "version 2":
+                        etat = 9;
+                        return;
+                    default:
+                        monitor.nextCurrentLine("error");
+                        return;
+                }
+            case 8:
+                switch (com)
+                {
+                    case "version 2":
+                        etat = 9;
+                        return;
+                    default:
+                        monitor.nextCurrentLine("error");
+                        return;
+                }
+            case 9:
+                switch (com)
+                {
+                    case "network 192.168.1.0":
+                        net1 = true;
+
+                        if (net1 && net2)
+                        {
+                            etat = 10;
+                        }
+                        return;
+                    case "network 11.0.0.0":
+                        net2 = true;
+
+                        if (net1 && net2)
+                        {
+                            etat = 10;
+                        }
+                        return;
+                    default:
+                        monitor.nextCurrentLine("error");
+                        return;
+                }
+            case 10:
+                switch (com)
+                {
+                    default:
+                        monitor.nextCurrentLine("error");
+                        return;
+                }
         }
     }
 

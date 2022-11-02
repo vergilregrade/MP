@@ -352,6 +352,7 @@
 "Assets/Interaction_Objet.cs"
 "Assets/Move_Personnage.cs"
 "Assets/Objet_Main.cs"
+"Assets/porte couloire/boitier_P_C_s.cs"
 "Assets/Serveur/Port_comportement.cs"
 "Assets/Serveur/Port_Interaction.cs"
 "Assets/switch_code_action.cs"
