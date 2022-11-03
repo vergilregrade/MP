@@ -23,6 +23,9 @@ public class action : MonoBehaviour
     public SUB_PC sub_pc;
     private int etat = 0;
 
+    public GameObject pc2actine = null; 
+    
+
     bool switchEnable = false;
     bool accessMasterConsole = false;
     bool routUp = false;
@@ -171,6 +174,7 @@ public class action : MonoBehaviour
     {
         com = com.ToLower();
         var comSplit = com.Split(" ");
+
         switch (etat)
         {
             case 0:
@@ -178,16 +182,16 @@ public class action : MonoBehaviour
                 {
                     case "e621":
                         monitor.nextCurrentLine("red rocket OwO");
-                        return;
+                        break;
                     case "access master console":
                         if (sub_pc == SUB_PC.TP2 || sub_pc == SUB_PC.TP1)
                         {
                             etat = 1;//connection switch
                             monitor.changeHead("Password:");
                         }
-                        return;
+                        break;
                     case "config router-1":
-                        if (accessMasterConsole)
+                        if (accessMasterConsole && sub_pc == SUB_PC.TP1)
                         {
                             etat = 2;//rout 1
                             monitor.changeHead("Router-1>");
@@ -196,11 +200,23 @@ public class action : MonoBehaviour
                         {
                             monitor.nextCurrentLine("error");
                         }
-                        return;
+                        break;
+                    case "config router-2":
+                        if (accessMasterConsole && sub_pc == SUB_PC.TP2)
+                        {
+                            etat = 2;//rout 1
+                            monitor.changeHead("Router-2>");
+                        }
+                        else
+                        {
+                            monitor.nextCurrentLine("error");
+                        }
+                        break;
                     default:
                         monitor.nextCurrentLine("error");
-                        return;
+                        break;
                 }
+                break;
             case 1:
                 switch (com)
                 {
@@ -209,67 +225,113 @@ public class action : MonoBehaviour
                         etat = 0;
                         accessMasterConsole = true;
                         monitor.changeHead("Master Console>");
-                        return;
+                        break;
                     default:
                         monitor.nextCurrentLine("wrong password");
                         monitor.changeHead("Master Console>");
                         etat = 0;
-                        return;
+                        break;
                 }
+                break;
             case 2:
                 switch (com)
                 {
                     case "enable":
-                        monitor.changeHead("Router-1#");
+                        if(sub_pc == SUB_PC.TP1)
+                            monitor.changeHead("Router-1#");
+                        else
+                            monitor.changeHead("Router-2#");
                         etat = 3;
-                        return;
+                        break;
                     case "en":
-                        monitor.changeHead("Router-1#");
+                        if (sub_pc == SUB_PC.TP1)
+                            monitor.changeHead("Router-1#");
+                        else
+                            monitor.changeHead("Router-2#");
                         etat = 3;
-                        return;
+                        break;
                     default:
                         monitor.nextCurrentLine("error");
-                        return;
+                        break;
                 }
+                break;
             case 3:
                 switch (com)
                 {
                     case "configure terminal":
-                        monitor.changeHead("Router-1(config)#");
+                        if (sub_pc == SUB_PC.TP1)
+                            monitor.changeHead("Router-1(config)#");
+                        else
+                            monitor.changeHead("Router-2(config)#");
                         etat = 4;
-                        return;
+                        break;
                     case "conf t":
-                        monitor.changeHead("Router-1(config)#");
+                        if (sub_pc == SUB_PC.TP1)
+                            monitor.changeHead("Router-1(config)#");
+                        else
+                            monitor.changeHead("Router-2(config)#");
                         etat = 4;
-                        return;
+                        break;
                     default:
                         monitor.nextCurrentLine("error");
-                        return;
+                        break;
                 }
+                break;
             case 4:
                 switch (com)
                 {
                     case "interface fa0/0":
-                        monitor.changeHead("Router-1(config-if)#");
-                        etat = 5;
-                        return;
+                        if (sub_pc == SUB_PC.TP1)
+                        {
+                            monitor.changeHead("Router-1(config-if)#");
+                            etat = 5;
+                        }else
+                            monitor.nextCurrentLine("error");
+                        break;
                     case "int fa0/0":
-                        monitor.changeHead("Router-1(config-if)#");
-                        etat = 5;
-                        return;
+                        if (sub_pc == SUB_PC.TP1)
+                        {
+                            monitor.changeHead("Router-1(config-if)#");
+                            etat = 5;
+                        }
+                        else
+                            monitor.nextCurrentLine("error");
+                        break;
+                    case "interface se0/0":
+                        if (sub_pc == SUB_PC.TP2)
+                        {
+                            monitor.changeHead("Router-2(config-if)#");
+                            etat = 5;
+                        }
+                        else
+                            monitor.nextCurrentLine("error");
+                        break;
+                    case "int se0/0":
+                        if (sub_pc == SUB_PC.TP2)
+                        {
+                            monitor.changeHead("Router-2(config-if)#");
+                            etat = 5;
+                        }
+                        else
+                            monitor.nextCurrentLine("error");
+                        break;
                     case "router rip":
                         if (routUp)
                         {
-                            monitor.changeHead("Router-1(config-rip)#");
+                            if(sub_pc == SUB_PC.TP1)
+                                monitor.changeHead("Router-1(config-rip)#");
+                            else
+                                monitor.changeHead("Router-2(config-rip)#");
                             etat = 7;
-                            return;
+                            break;
                         }
                         monitor.nextCurrentLine("error");
-                        return;
+                        break;
                     default:
                         monitor.nextCurrentLine("error");
-                        return;
+                        break;
                 }
+                break;
             case 5:
                 if (comSplit.Length != 0)
                 {
@@ -279,69 +341,106 @@ public class action : MonoBehaviour
                             if (comSplit.Length != 4)
                             {
                                 monitor.nextCurrentLine("invalid format");
-                                return;
+                                break;
                             }
-                            if (comSplit[1] == "adresse" && (comSplit[2] != "192.168.1.254" || comSplit[3] != "255.255.255.0"))
+                            if (sub_pc == SUB_PC.TP1 && 
+                                comSplit[1] == "address" &&
+                                comSplit[2] == "192.168.1.254" &&
+                                comSplit[3] == "255.255.255.0")
                             {
-                                monitor.nextCurrentLine("invalid ip");
-                                return;
+                                monitor.changeHead("Router-1(config-if)#");
+                                etat = 6;
+                                break;
                             }
-                            monitor.changeHead("Router-1(config-if)#");
-                            etat = 6;
-                            return;
+                            if (sub_pc == SUB_PC.TP2 &&
+                                comSplit[1] == "address" &&
+                                comSplit[2] == "11.0.0.254" &&
+                                comSplit[3] == "255.0.0.0")
+                            {
+                                monitor.changeHead("Router-2(config-if)#");
+                                etat = 6;
+                                break;
+                            }
+                            monitor.nextCurrentLine("invalid format");
+                            break;
+
                         case "exit":
-                            monitor.changeHead("Router-1(config)#");
+                            if(sub_pc == SUB_PC.TP1)
+                                monitor.changeHead("Router-1(config)#");
+                            else
+                                monitor.changeHead("Router-2(config)#");
                             etat = 4;
-                            return;
+                            break;
                         default:
                             monitor.nextCurrentLine("error");
-                            return;
+                            break;
                     }
                 }
-                return;
+                break;
             case 6:
                 switch (com)
                 {
                     case "no shutdown":
-                        monitor.nextCurrentLine("Changed State of fa0/0");
-                        monitor.nextCurrentLine("fa0/1 from DOWN to UP");
+                        if (sub_pc == SUB_PC.TP1)
+                        {
+                            monitor.nextCurrentLine("Changed State of fa0/0");
+                            monitor.nextCurrentLine("fa0/1 from DOWN to UP");
+                        }else
+                        {
+                            monitor.nextCurrentLine("Changed State of se0/0");
+                            monitor.nextCurrentLine("se0/1 from DOWN to UP");
+                        }
                         etat = 5;
                         routUp = true;
-                        return;
+                        break;
                     case "no sh":
-                        monitor.nextCurrentLine("Changed State of fa0/0");
-                        monitor.nextCurrentLine("fa0/1 from DOWN to UP");
+                        if (sub_pc == SUB_PC.TP1)
+                        {
+                            monitor.nextCurrentLine("Changed State of fa0/0");
+                            monitor.nextCurrentLine("fa0/1 from DOWN to UP");
+                        }
+                        else
+                        {
+                            monitor.nextCurrentLine("Changed State of se0/0");
+                            monitor.nextCurrentLine("se0/1 from DOWN to UP");
+                        }
                         etat = 5;
                         routUp = true;
-                        return;
+                        break;
                     case "exit":
-                        monitor.changeHead("Router-1(config)#");
+                        if(sub_pc == SUB_PC.TP1)
+                            monitor.changeHead("Router-1(config)#");
+                        else
+                            monitor.changeHead("Router-2(config)#");
                         etat = 4;
-                        return;
+                        break;
                     default:
                         monitor.nextCurrentLine("error");
-                        return;
+                        break;
                 }
+                break;
             case 7:
                 switch (com)
                 {
                     case "version 2":
                         etat = 9;
-                        return;
+                        break;
                     default:
                         monitor.nextCurrentLine("error");
-                        return;
+                        break;
                 }
+                break;
             case 8:
                 switch (com)
                 {
                     case "version 2":
                         etat = 9;
-                        return;
+                        break;
                     default:
                         monitor.nextCurrentLine("error");
-                        return;
+                        break;
                 }
+                break;
             case 9:
                 switch (com)
                 {
@@ -352,7 +451,7 @@ public class action : MonoBehaviour
                         {
                             etat = 10;
                         }
-                        return;
+                        break;
                     case "network 11.0.0.0":
                         net2 = true;
 
@@ -360,44 +459,62 @@ public class action : MonoBehaviour
                         {
                             etat = 10;
                         }
-                        return;
+                        break;
                     default:
                         monitor.nextCurrentLine("error");
-                        return;
+                        break;
                 }
+                break;
             case 10:
                 switch (com)
                 {
                     default:
                         monitor.nextCurrentLine("error");
-                        return;
+                        break;
                 }
+                break;
+        }
+
+        if (endConfig() && pc2actine != null)
+        {
+            print("end conf ok");
+            pc2actine.GetComponent<ScreenInteraction>().changeEnableComputer();
         }
     }
 
 
     private void my_ls(ScreenInteraction monitor)
     {
-        switch(etat)
+        if(pc == PC.SECU)
+            switch(etat)
+            {
+                case 4:
+                    monitor.nextCurrentLine("code_porte_secu.txt");
+                    break;
+            }
+        else if (sub_pc == SUB_PC.TP3)
         {
-            case 4:
-                monitor.nextCurrentLine("code_porte_secu.txt");
-                break;
+            monitor.nextCurrentLine("code_porte_tp.txt");
         }
     }
 
     private void my_cat(string com, ScreenInteraction monitor)
     {
-        switch(etat)
+        if (pc == PC.SECU)
+            switch (etat)
+            {
+                case 4:
+                    switch(com)
+                    {
+                        case "cat code_porte_secu.txt":
+                            monitor.nextCurrentLine("le code est 3621");
+                            break;
+                    }
+                    break;
+            }
+        else if (sub_pc == SUB_PC.TP3 && com == "cat code_porte_tp.txt")
         {
-            case 4:
-                switch(com)
-                {
-                    case "cat code_porte_secu.txt":
-                        monitor.nextCurrentLine("le code est 3621");
-                        break;
-                }
-                break;
+            monitor.nextCurrentLine("le code est 1235");
         }
     }
 
@@ -405,6 +522,11 @@ public class action : MonoBehaviour
     {
         switchEnable = b;
         print("switch state " + b.ToString());
+    }
+
+    public bool endConfig()
+    {
+        return routUp && net1 && net2;
     }
 
 }

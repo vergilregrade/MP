@@ -31,13 +31,16 @@ public class ScreenInteraction : MonoBehaviour
     private int indexCommand = 0;
     private List<string> test = new List<string>();
 
+    public bool enableComputer = true;
+
+    public GameObject[] PCneed2bSet;
+
 
     void Start()
     {
         monitor = new char[nbLingne, nbColonne + 1];
         clearScreen();
         printMonitor();
-        
     }
     void Update()
     {
@@ -51,6 +54,7 @@ public class ScreenInteraction : MonoBehaviour
                 o_monitor.GetComponent<Mac_collision_trigger>().setCamEnable(false);
                 return;
             }
+            if (!enableComputer) { return; }
             string screen = Input.inputString;
             if (Input.GetKeyDown(KeyCode.UpArrow))
             {
@@ -403,6 +407,16 @@ public class ScreenInteraction : MonoBehaviour
     public void changeHead(string s)
     {
         head = s;
+    }
+
+    public void changeEnableComputer()
+    {
+        bool isSet = true;
+        foreach(GameObject pc in PCneed2bSet)
+        {
+            isSet = isSet && pc.GetComponent<action>().endConfig();
+        }
+        enableComputer = isSet;
     }
 
 }
