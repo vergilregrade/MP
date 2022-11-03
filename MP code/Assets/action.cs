@@ -93,10 +93,17 @@ public class action : MonoBehaviour
                             monitor.changeHead("switch$");
                         }
                         return;
-                    case "ssh":
-                        if (!switchEnable && (comSplit[1] == "172.83.236.1" || (comSplit[1] == "-l" && comSplit[2] == "172.83.236.1")))
+                    case "en":
+                        if (etat == 0)//etat par default
                         {
-                            monitor.nextCurrentLine("ip unreachables");
+                            etat = 1;//etat connecter switch cisco
+                            monitor.changeHead("switch$");
+                        }
+                        return;
+                    case "ssh":
+                        if (!switchEnable && (comSplit[1] == "SSH" || (comSplit[2] == "-l" && comSplit[3] == "172.83.236.1")))
+                        {
+                            monitor.nextCurrentLine("ip unreachable");
                             break;
                         }
                         etat = 2;//ssh username
@@ -113,7 +120,7 @@ public class action : MonoBehaviour
                     case "traceroute NACU.com":
                         if(!switchEnable)
                         {
-                            monitor.nextCurrentLine("ip unreachables");
+                            monitor.nextCurrentLine("ip unreachable");
                             break;
                         }
                         monitor.nextCurrentLine("172.83.236.1");
@@ -201,11 +208,11 @@ public class action : MonoBehaviour
                         monitor.nextCurrentLine("Granted");
                         etat = 0;
                         accessMasterConsole = true;
-                        monitor.changeHead("MasterConsole>");
+                        monitor.changeHead("Master Console>");
                         return;
                     default:
                         monitor.nextCurrentLine("wrong password");
-                        monitor.changeHead("MasterConsole>");
+                        monitor.changeHead("Master Console>");
                         etat = 0;
                         return;
                 }
@@ -213,6 +220,10 @@ public class action : MonoBehaviour
                 switch (com)
                 {
                     case "enable":
+                        monitor.changeHead("Router-1#");
+                        etat = 3;
+                        return;
+                    case "en":
                         monitor.changeHead("Router-1#");
                         etat = 3;
                         return;
@@ -242,6 +253,10 @@ public class action : MonoBehaviour
                         monitor.changeHead("Router-1(config-if)#");
                         etat = 5;
                         return;
+                    case "int fa0/0":
+                        monitor.changeHead("Router-1(config-if)#");
+                        etat = 5;
+                        return;
                     case "router rip":
                         if (routUp)
                         {
@@ -263,12 +278,12 @@ public class action : MonoBehaviour
                         case "ip":
                             if (comSplit.Length != 4)
                             {
-                                monitor.nextCurrentLine("invalide format");
+                                monitor.nextCurrentLine("invalid format");
                                 return;
                             }
                             if (comSplit[1] == "adresse" && (comSplit[2] != "192.168.1.254" || comSplit[3] != "255.255.255.0"))
                             {
-                                monitor.nextCurrentLine("invalide ip");
+                                monitor.nextCurrentLine("invalid ip");
                                 return;
                             }
                             monitor.changeHead("Router-1(config-if)#");
