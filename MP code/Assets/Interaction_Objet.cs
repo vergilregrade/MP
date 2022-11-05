@@ -187,7 +187,12 @@ public class Interaction_Objet : MonoBehaviour
                         hit.collider.gameObject.GetComponent<boitier_P_C_s>().tryKey(key);
                     }
                 }
-
+                else if (hit.collider.tag == "pcb")
+                {
+                    hit.collider.gameObject.GetComponent<intercat_pcb_s>().setEnable(this.gameObject);
+                    this.GetComponent<Move_Personnage>().setEnable(false);
+                    this.GetComponent<Move_Personnage>().SetCamEnable(false);
+                }
             }
             else
             {

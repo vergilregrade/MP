@@ -18,6 +18,7 @@ TagManager:
   - Digicode
   - Casier
   - Boitier_Porte_C
+  - pcb
   layers:
   - Default
   - TransparentFX
