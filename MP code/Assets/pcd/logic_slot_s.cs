@@ -13,6 +13,8 @@ public class logic_slot_s : MonoBehaviour
     public Material off = null;
     public Material nul = null;
 
+    public bool a_supr = false;
+
     public enum LOGIC { AND, OR, NAND, XOR , NAN};
 
     public bool state = false;
@@ -86,15 +88,14 @@ public class logic_slot_s : MonoBehaviour
         else { one = in1.GetComponent<logic_slot_s>().state; }
 
         if (in2.GetComponent<inOut_s>() != null) { two = in2.GetComponent<inOut_s>().etat; }
-        else { two = in1.GetComponent<logic_slot_s>().state; }
+        else { two = in2.GetComponent<logic_slot_s>().state; }
 
 
-        print(my_logic);
+        //print(my_logic);
         switch(my_logic)
         {
             case LOGIC.AND:
                 state = one && two;
-                print("ok");
                 break;
             case LOGIC.OR:
                 state = one || two;
@@ -108,8 +109,8 @@ public class logic_slot_s : MonoBehaviour
         }
 
         change_color();
-
-        print(one.ToString() + two.ToString() + state.ToString() + this.name);
+        if(a_supr)
+            print(one.ToString() + " "+ two.ToString() + " "+state.ToString() +" "+ this.name);
 
         foreach(var elem in out1)
         {
