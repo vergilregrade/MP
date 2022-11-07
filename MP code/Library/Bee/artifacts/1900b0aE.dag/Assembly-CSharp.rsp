@@ -356,6 +356,7 @@
 "Assets/pcd/intercat_pcb_s.cs"
 "Assets/pcd/logic_slot_s.cs"
 "Assets/pcd/pcb_s.cs"
+"Assets/pcd/select_s.cs"
 "Assets/porte couloire/boitier_P_C_s.cs"
 "Assets/Serveur/Port_comportement.cs"
 "Assets/Serveur/Port_Interaction.cs"

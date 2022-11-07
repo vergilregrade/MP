@@ -7,6 +7,10 @@ public class pcb_s : MonoBehaviour
 {
     private GameObject player;
     private bool enable = false;
+    private GameObject logic_selected = null;
+
+    public GameObject addSelect;
+    public GameObject orSelect;
 
     // Update is called once per frame
     void Update()
@@ -28,5 +32,34 @@ public class pcb_s : MonoBehaviour
     {
         player = p;
         enable = true;
+    }
+
+    public bool nothing_select()
+    {
+        return logic_selected == null;
+    }
+
+    public logic_slot_s.LOGIC GetLOGIC_select()
+    {
+        if (logic_selected == null)
+            return logic_slot_s.LOGIC._null_;
+        return logic_selected.GetComponent<select_s>().get_my_logic();
+    }
+
+    public void logic_clique(bool b = false)
+    {
+        if(logic_selected != null)
+            logic_selected.GetComponent<select_s>().sub(b);
+        logic_selected = null;
+    }
+
+    public void setSelect(GameObject obj)
+    {
+        logic_selected = obj;
+    }
+
+    public void freeAnd()
+    {
+        addSelect.GetComponent<select_s>().add();
     }
 }

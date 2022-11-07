@@ -10,7 +10,6 @@ public class boitier_P_C_s : MonoBehaviour
 
     public bool tryKey(int key)
     {
-        print("key couloire" + key.ToString());
         if(key == keyNeeded && !isOpen)
         {
             Open();
@@ -35,8 +34,6 @@ public class boitier_P_C_s : MonoBehaviour
     }
     private void Fail()
     {
-        print("fail ok");
         anim.SetTrigger("fail");
-        print("ookk");
     }
 }

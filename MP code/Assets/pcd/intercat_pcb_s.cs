@@ -6,12 +6,14 @@ public class intercat_pcb_s : MonoBehaviour
 {
     public GameObject pcb;
     public Camera cam;
+    public GameObject inter;
 
     public GameObject[] startModule;
 
     private void Start()
     {
         cam.enabled = false;
+        inter.SetActive(false);
     }
     public void setEnable(GameObject p)
     {
@@ -25,6 +27,7 @@ public class intercat_pcb_s : MonoBehaviour
     {
         cam.enabled = b;
         this.GetComponent<BoxCollider>().enabled = !b;
+        inter.SetActive(b);
 
         if (Cursor.lockState == CursorLockMode.Locked)
         {
@@ -46,4 +49,6 @@ public class intercat_pcb_s : MonoBehaviour
             elem.GetComponent<inOut_s>().next_setrp(true,255,this.gameObject);
         }
     }
+
+
 }

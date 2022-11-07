@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.EditorTools;
 using UnityEngine;
+using TMPro;
 
 public class logic_slot_s : MonoBehaviour
 {
@@ -13,21 +14,23 @@ public class logic_slot_s : MonoBehaviour
     public Material off = null;
     public Material nul = null;
 
-    public bool a_supr = false;
-
-    public enum LOGIC { AND, OR, NAND, XOR , NAN};
+    public enum LOGIC { AND, OR, NAND, XOR , _null_};
 
     public bool state = false;
-    public bool logic_on = true;
+    public bool logic_on = false;
     public LOGIC my_logic = LOGIC.AND;
 
     public GameObject master = null;
+
+    public bool toPrint = false;
     
 
     // Start is called before the first frame update
     void Start()
     {
+        print("logic on " + logic_on.ToString());
         change_color();
+        upd_text();
     }
 
     // Update is called once per frame
@@ -47,11 +50,33 @@ public class logic_slot_s : MonoBehaviour
     }
     private void OnMouseUp()
     {
-        master.GetComponent<intercat_pcb_s>().start_loop();
+        var selected = GetComponentInParent<pcb_s>().GetLOGIC_select();
+        if(selected == LOGIC._null_)
+        {
+            switch(my_logic)
+            {
+                case LOGIC.AND:
+                    GetComponentInParent<pcb_s>().freeAnd();
+                    break;
+            }
+        }
+        bool sameLogic = selected == my_logic;
+
+
+        logic_on = selected != LOGIC._null_;
+        my_logic = selected;
+        change_color();
+        upd_text();
+        if (logic_on)
+        {
+            master.GetComponent<intercat_pcb_s>().start_loop();
+        }
+        GetComponentInParent<pcb_s>().logic_clique(sameLogic);
     }
 
     private void change_color()
     {
+        if (toPrint) print("logic state" + logic_on.ToString());
         if(logic_on)
         {
             if(state)
@@ -109,8 +134,7 @@ public class logic_slot_s : MonoBehaviour
         }
 
         change_color();
-        if(a_supr)
-            print(one.ToString() + " "+ two.ToString() + " "+state.ToString() +" "+ this.name);
+
 
         foreach(var elem in out1)
         {
@@ -118,5 +142,10 @@ public class logic_slot_s : MonoBehaviour
             else if(elem.GetComponent<logic_slot_s>() != null) { elem.GetComponent<logic_slot_s>().next_setrp(state,ttl-1,this.gameObject); }
         }
 
+    }
+
+    public void upd_text()
+    {
+        this.GetComponentInChildren<TextMeshPro>().text = my_logic.ToString();
     }
 }
