@@ -11,6 +11,8 @@ public class pcb_s : MonoBehaviour
 
     public GameObject addSelect;
     public GameObject orSelect;
+    public GameObject nandSelect;
+    public GameObject xorSelect;
 
     // Update is called once per frame
     void Update()
@@ -30,8 +32,17 @@ public class pcb_s : MonoBehaviour
 
     public void SetEnable(GameObject p)
     {
+        print("helloword");
         player = p;
         enable = true;
+        addSelect.GetComponent<select_s>().quantity = p.GetComponent<Interaction_Objet>().logicCount[logic_slot_s.LOGIC.AND];
+        addSelect.GetComponent<select_s>().updateText();
+        orSelect.GetComponent<select_s>().quantity = p.GetComponent<Interaction_Objet>().logicCount[logic_slot_s.LOGIC.OR];
+        orSelect.GetComponent<select_s>().updateText();
+        nandSelect.GetComponent<select_s>().quantity = p.GetComponent<Interaction_Objet>().logicCount[logic_slot_s.LOGIC.NAND];
+        nandSelect.GetComponent<select_s>().updateText();
+        xorSelect.GetComponent<select_s>().quantity = p.GetComponent<Interaction_Objet>().logicCount[logic_slot_s.LOGIC.XOR];
+        xorSelect.GetComponent<select_s>().updateText();
     }
 
     public bool nothing_select()
@@ -48,9 +59,16 @@ public class pcb_s : MonoBehaviour
 
     public void logic_clique(bool b = false)
     {
-        if(logic_selected != null)
+
+
+        if (logic_selected != null)
+        { 
             logic_selected.GetComponent<select_s>().sub(b);
+            player.GetComponent<Interaction_Objet>().edit_logicCount(logic_selected.GetComponent<select_s>().my_logic, 1);
+        }
         logic_selected = null;
+
+        
     }
 
     public void setSelect(GameObject obj)
@@ -62,4 +80,26 @@ public class pcb_s : MonoBehaviour
     {
         addSelect.GetComponent<select_s>().add();
     }
+
+    public void freelogic(logic_slot_s.LOGIC lo)
+    {
+        switch (lo)
+        {
+            case logic_slot_s.LOGIC.AND:
+                addSelect.GetComponent<select_s>().add();
+                break;
+            case logic_slot_s.LOGIC.OR:
+                orSelect.GetComponent<select_s>().add();
+                break;
+            case logic_slot_s.LOGIC.NAND:
+                nandSelect.GetComponent<select_s>().add();
+                break;
+            case logic_slot_s.LOGIC.XOR:
+                xorSelect.GetComponent<select_s>().add();
+                break;
+        }
+        player.GetComponent<Interaction_Objet>().edit_logicCount(lo, 1);
+    }
+
+    
 }

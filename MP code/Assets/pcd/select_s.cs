@@ -11,7 +11,7 @@ public class select_s : MonoBehaviour
     private bool is_select = false;
     void Start()
     {
-        GetComponentInChildren<TextMeshPro>().text = my_logic.ToString() + " x"+ quantity.ToString();
+        updateText();
     }
 
     // Update is called once per frame
@@ -35,7 +35,7 @@ public class select_s : MonoBehaviour
 
     private void OnMouseUpAsButton()
     {
-        if(GetComponentInParent<pcb_s>().nothing_select())
+        if(GetComponentInParent<pcb_s>().nothing_select() && quantity > 0)
         {
             GetComponentInParent<pcb_s>().setSelect(this.gameObject);
             is_select = true;
@@ -53,7 +53,7 @@ public class select_s : MonoBehaviour
     {
         if(!b)
             quantity -= 1;
-        GetComponentInChildren<TextMeshPro>().text = my_logic.ToString() + " x" + quantity.ToString();
+        updateText();
         is_select = false;
         GetComponent<Renderer>().material.color = Color.black;
 
@@ -62,6 +62,11 @@ public class select_s : MonoBehaviour
     public void add()
     {
         quantity += 1;
+        updateText();
+    }
+
+    public void updateText()
+    {
         GetComponentInChildren<TextMeshPro>().text = my_logic.ToString() + " x" + quantity.ToString();
     }
 }

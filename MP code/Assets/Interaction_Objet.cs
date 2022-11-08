@@ -18,6 +18,13 @@ public class Interaction_Objet : MonoBehaviour
     private bool _priseGrab = false;
     private GameObject _prise;
 
+    public Dictionary<logic_slot_s.LOGIC, int> logicCount = new Dictionary<logic_slot_s.LOGIC, int>(){ 
+        {logic_slot_s.LOGIC.AND, 0 }, 
+        { logic_slot_s.LOGIC.OR, 0 },
+        { logic_slot_s.LOGIC.NAND, 0 },
+        { logic_slot_s.LOGIC.XOR, 0 }
+    };
+
     Camera cam;
 
 
@@ -131,18 +138,6 @@ public class Interaction_Objet : MonoBehaviour
                         count_Fusible--;
                     }
                 }
-                //else if (hit.collider.tag == "Cable")
-                //{
-                //    if(!cableGrab)
-                //    {
-                //        cable = hit.collider.gameObject;
-                //        cable.transform.position = card.transform.position;
-                //        cable.transform.SetParent(cam.transform);
-                //        cable.GetComponent<cable_interact>().grabed();
-                //        cableGrab = true;
-                //    }
-
-                //}
                 else if (hit.collider.tag == "port")
                 {
                     if (!_priseGrab)
@@ -152,23 +147,6 @@ public class Interaction_Objet : MonoBehaviour
                         _prise = c_parent.GetComponent<Port_Interaction>().UnplugPrise(c_port, card);
                         _priseGrab = _prise != null;
                     }
-                    //if(cableGrab)
-                    //{
-                    //    GameObject c_port = hit.collider.gameObject;
-                    //    GameObject c_parent = c_port.transform.parent.gameObject;
-                    //    GameObject c_prise;
-                    //    if (!cable.GetComponent<cable_interact>().isP1IsSet())
-                    //    {
-                    //        c_prise = cable.GetComponent<cable_interact>().setP1();
-                    //    }
-                    //    else
-                    //    {
-                    //        c_prise = cable.GetComponent<cable_interact>().setP2();
-                    //    }
-                    //    c_parent.gameObject.GetComponent<Port_Interaction>().connectP(c_port, c_prise);
-                    //    cableGrab = cable.GetComponent<cable_interact>().isIsGrad();
-                    //    print(cableGrab);
-                    //}
                 }
                 else if (hit.collider.tag == "grabedPrise")
                 {
@@ -192,6 +170,11 @@ public class Interaction_Objet : MonoBehaviour
                     hit.collider.gameObject.GetComponent<intercat_pcb_s>().setEnable(this.gameObject);
                     this.GetComponent<Move_Personnage>().setEnable(false);
                     this.GetComponent<Move_Personnage>().SetCamEnable(false);
+                }
+                else if(hit.collider.tag == "Logical_door")
+                {
+                    logicCount[hit.collider.gameObject.GetComponent<logicalDoor_drop_s>().mylogic] += 1;
+                    Destroy(hit.collider.gameObject);
                 }
             }
             else
@@ -222,5 +205,11 @@ public class Interaction_Objet : MonoBehaviour
     public int getCardValue()
     {
         return CardValue;
+    }
+
+    public void edit_logicCount(logic_slot_s.LOGIC lo, int val)
+    {
+        if(lo != logic_slot_s.LOGIC._null_)
+            logicCount[lo] += val;
     }
 }

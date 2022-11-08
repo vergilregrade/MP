@@ -51,14 +51,15 @@ public class logic_slot_s : MonoBehaviour
     private void OnMouseUp()
     {
         var selected = GetComponentInParent<pcb_s>().GetLOGIC_select();
-        if(selected == LOGIC._null_)
+        if(selected != my_logic)
         {
-            switch(my_logic)
-            {
-                case LOGIC.AND:
-                    GetComponentInParent<pcb_s>().freeAnd();
-                    break;
-            }
+            GetComponentInParent<pcb_s>().freelogic(my_logic);
+            //switch(my_logic)
+            //{
+            //    case LOGIC.AND:
+            //        GetComponentInParent<pcb_s>().freeAnd();
+            //        break;
+            //}
         }
         bool sameLogic = selected == my_logic;
 

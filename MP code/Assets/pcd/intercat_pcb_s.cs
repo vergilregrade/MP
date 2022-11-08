@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class intercat_pcb_s : MonoBehaviour
 {
-    public GameObject pcb;
     public Camera cam;
     public GameObject inter;
 

@@ -354,6 +354,7 @@
 "Assets/Objet_Main.cs"
 "Assets/pcd/inOut_s.cs"
 "Assets/pcd/intercat_pcb_s.cs"
+"Assets/pcd/logicalDoor_drop_s.cs"
 "Assets/pcd/logic_slot_s.cs"
 "Assets/pcd/pcb_s.cs"
 "Assets/pcd/select_s.cs"
