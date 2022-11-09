@@ -35,7 +35,7 @@ public class levier_s : MonoBehaviour
     }
     public bool changement_etat()
     {
-        if (!fusibleSet)
+        if (!fusibleSet || !GetComponent<levier_2_activate_s>().precondition)
         {
             fail();
         }

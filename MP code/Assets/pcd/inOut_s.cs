@@ -51,6 +51,8 @@ public class inOut_s : MonoBehaviour
             {
                 this.GetComponent<Renderer>().material = off;
             }
+            if(b)
+                transform.parent.gameObject.transform.parent.GetComponent<intercat_pcb_s>().triggerOut();
         }
     }
 }

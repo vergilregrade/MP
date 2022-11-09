@@ -19,10 +19,10 @@ public class Interaction_Objet : MonoBehaviour
     private GameObject _prise;
 
     public Dictionary<logic_slot_s.LOGIC, int> logicCount = new Dictionary<logic_slot_s.LOGIC, int>(){ 
-        {logic_slot_s.LOGIC.AND, 0 }, 
-        { logic_slot_s.LOGIC.OR, 0 },
-        { logic_slot_s.LOGIC.NAND, 0 },
-        { logic_slot_s.LOGIC.XOR, 0 }
+        {logic_slot_s.LOGIC.AND,    0 }, 
+        { logic_slot_s.LOGIC.OR,    0 },
+        { logic_slot_s.LOGIC.NAND,  0 },
+        { logic_slot_s.LOGIC.XOR,   0 }
     };
 
     Camera cam;
@@ -175,6 +175,10 @@ public class Interaction_Objet : MonoBehaviour
                 {
                     logicCount[hit.collider.gameObject.GetComponent<logicalDoor_drop_s>().mylogic] += 1;
                     Destroy(hit.collider.gameObject);
+                }
+                else if(hit.collider.tag == "Key_Door")
+                {
+                    hit.collider.gameObject.GetComponent<Animator>().SetTrigger("fail");
                 }
             }
             else

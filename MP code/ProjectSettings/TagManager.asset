@@ -20,6 +20,7 @@ TagManager:
   - Boitier_Porte_C
   - pcb
   - Logical_door
+  - Key_Door
   layers:
   - Default
   - TransparentFX

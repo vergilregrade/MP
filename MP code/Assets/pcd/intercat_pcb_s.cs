@@ -9,6 +9,8 @@ public class intercat_pcb_s : MonoBehaviour
 
     public GameObject[] startModule;
 
+    public GameObject disjontToActive;
+
     private void Start()
     {
         cam.enabled = false;
@@ -46,6 +48,24 @@ public class intercat_pcb_s : MonoBehaviour
         foreach(var elem in startModule)
         {
             elem.GetComponent<inOut_s>().next_setrp(true,255,this.gameObject);
+        }
+    }
+
+    public void triggerOut()
+    {
+        print("trigger out ok");
+        bool b = true;
+        foreach(var obj in startModule)
+        {
+            if(obj.GetComponent<inOut_s>().type == inOut_s.INOUT.OUT)
+            {
+                b = b && obj.GetComponent<inOut_s>().etat;
+            }
+        }
+
+        if (b)
+        {
+            disjontToActive.GetComponent<levier_2_activate_s>().setPrecondition(true);
         }
     }
 

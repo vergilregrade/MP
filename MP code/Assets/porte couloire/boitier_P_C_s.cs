@@ -8,6 +8,9 @@ public class boitier_P_C_s : MonoBehaviour
     private bool isOpen = false;
     public Animator anim;
 
+    public enum openSize { OPEN, BIGOPEN}
+    public openSize my_type = openSize.OPEN;
+
     public bool tryKey(int key)
     {
         if(key == keyNeeded && !isOpen)
@@ -24,7 +27,10 @@ public class boitier_P_C_s : MonoBehaviour
 
     private void Open()
     {
-        anim.SetTrigger("open");
+        if(my_type == openSize.OPEN)
+            anim.SetTrigger("open");
+        else
+            anim.SetTrigger("bigOpen");
         isOpen = true;
     }
     private void Close()
