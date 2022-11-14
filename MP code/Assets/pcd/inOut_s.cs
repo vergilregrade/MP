@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.EditorTools;
+using UnityEditor;
+using UnityEditor;
 using UnityEngine;
 
 public class inOut_s : MonoBehaviour

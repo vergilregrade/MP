@@ -20,7 +20,6 @@ public class Door_s : MonoBehaviour
     public void Open()
     {
         anim.SetTrigger("open");
-        print("ok");
         isOpen = true;
     }
 
@@ -40,7 +39,6 @@ public class Door_s : MonoBehaviour
         {
             Open();
         }
-        print("change etat");
         return isOpen;
     }
 }

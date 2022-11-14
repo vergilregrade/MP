@@ -32,7 +32,6 @@ public class pcb_s : MonoBehaviour
 
     public void SetEnable(GameObject p)
     {
-        print("helloword");
         player = p;
         enable = true;
         addSelect.GetComponent<select_s>().quantity = p.GetComponent<Interaction_Objet>().logicCount[logic_slot_s.LOGIC.AND];

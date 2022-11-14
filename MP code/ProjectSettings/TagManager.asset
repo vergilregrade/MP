@@ -21,6 +21,7 @@ TagManager:
   - pcb
   - Logical_door
   - Key_Door
+  - Exit
   layers:
   - Default
   - TransparentFX

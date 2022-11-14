@@ -45,7 +45,6 @@ public class action : MonoBehaviour
     {
         var monito = this.GetComponent<ScreenInteraction>();
         var comSplit = com.Split(" ");
-        print(comSplit[0]);
         switch(comSplit[0])
         {
             case "":
@@ -477,7 +476,6 @@ public class action : MonoBehaviour
 
         if (endConfig() && pc2actine != null)
         {
-            print("end conf ok");
             pc2actine.GetComponent<ScreenInteraction>().changeEnableComputer();
         }
     }
@@ -521,7 +519,6 @@ public class action : MonoBehaviour
     public void enableSwitch(bool b)
     {
         switchEnable = b;
-        print("switch state " + b.ToString());
     }
 
     public bool endConfig()

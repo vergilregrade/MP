@@ -53,7 +53,6 @@ public class intercat_pcb_s : MonoBehaviour
 
     public void triggerOut()
     {
-        print("trigger out ok");
         bool b = true;
         foreach(var obj in startModule)
         {

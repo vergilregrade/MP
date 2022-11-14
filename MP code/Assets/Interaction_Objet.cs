@@ -110,11 +110,9 @@ public class Interaction_Objet : MonoBehaviour
                 else if (hit.collider.tag == "Safe")
                 {
                     //hit.collider.gameObject.GetComponent<Coffre_action>().PlayerInteract(this.gameObject);
-                    print("ok");
                     foreach (int key in list_key)
                     {
                         hit.collider.gameObject.GetComponent<Coffre_action>().Try_Key(key);
-                        print(key);
                     }
                 }
                 else if (hit.collider.tag == "Fusible")

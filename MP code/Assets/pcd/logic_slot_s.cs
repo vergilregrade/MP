@@ -1,6 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.EditorTools;
+using UnityEditor;
 using UnityEngine;
 using TMPro;
 
@@ -28,7 +28,6 @@ public class logic_slot_s : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        print("logic on " + logic_on.ToString());
         change_color();
         upd_text();
     }
@@ -66,18 +65,19 @@ public class logic_slot_s : MonoBehaviour
 
         logic_on = selected != LOGIC._null_;
         my_logic = selected;
+        if (my_logic == LOGIC._null_) state = false;
         change_color();
         upd_text();
-        if (logic_on)
-        {
-            master.GetComponent<intercat_pcb_s>().start_loop();
-        }
+        //if (logic_on)
+        //{
+        //    master.GetComponent<intercat_pcb_s>().start_loop();
+        //}
+        master.GetComponent<intercat_pcb_s>().start_loop();
         GetComponentInParent<pcb_s>().logic_clique(sameLogic);
     }
 
     private void change_color()
     {
-        if (toPrint) print("logic state" + logic_on.ToString());
         if(logic_on)
         {
             if(state)
