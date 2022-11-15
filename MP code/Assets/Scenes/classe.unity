@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5228,7 +5228,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1296077802408270173, guid: 2f91276de7c55894daf22ad8f81ca24c, type: 3}
       propertyPath: m_Name
-      value: Porte V2
+      value: Porte V2 (?)
       objectReference: {fileID: 0}
     - target: {fileID: 1296077802408756605, guid: 2f91276de7c55894daf22ad8f81ca24c, type: 3}
       propertyPath: m_RootOrder
@@ -5715,7 +5715,7 @@ GameObject:
   - component: {fileID: 105160310}
   - component: {fileID: 105160309}
   m_Layer: 0
-  m_Name: moniteur
+  m_Name: Moniteur
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6163,7 +6163,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 162103284}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!114 &148701517
 MonoBehaviour:
@@ -6287,7 +6287,7 @@ Transform:
   - {fileID: 16320821}
   - {fileID: 601048207}
   m_Father: {fileID: 557535021}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &162103283
 GameObject:
@@ -6317,9 +6317,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1939318299}
   - {fileID: 2285084917222532597}
   - {fileID: 148701516}
+  - {fileID: 1939318299}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -11838,7 +11838,7 @@ GameObject:
   - component: {fileID: 259001022}
   - component: {fileID: 259001021}
   m_Layer: 0
-  m_Name: boitier
+  m_Name: Lecteur Carte
   m_TagString: Boitier_Porte_C
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12807,7 +12807,7 @@ Transform:
   - {fileID: 864062584}
   - {fileID: 869372480}
   m_Father: {fileID: 557535021}
-  m_RootOrder: 6
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &394457078
 GameObject:
@@ -12823,7 +12823,7 @@ GameObject:
   - component: {fileID: 394457080}
   - component: {fileID: 394457083}
   m_Layer: 0
-  m_Name: boitier
+  m_Name: Lecteur Carte
   m_TagString: Boitier_Porte_C
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14385,11 +14385,11 @@ Transform:
   m_Children:
   - {fileID: 1335548621}
   - {fileID: 1123842602}
+  - {fileID: 384719443}
   - {fileID: 317027623}
   - {fileID: 948525520}
   - {fileID: 1353488042}
   - {fileID: 157090550}
-  - {fileID: 384719443}
   - {fileID: 1644122096}
   - {fileID: 701064420}
   m_Father: {fileID: 0}
@@ -15018,7 +15018,7 @@ GameObject:
   - component: {fileID: 675019420}
   - component: {fileID: 675019419}
   m_Layer: 0
-  m_Name: door
+  m_Name: Trappe
   m_TagString: Key_Door
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15084,7 +15084,7 @@ GameObject:
   m_Component:
   - component: {fileID: 681397192}
   m_Layer: 0
-  m_Name: Disjoncteur (1)
+  m_Name: Disjoncteur Elec
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15103,6 +15103,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 346260705}
+  - {fileID: 1238969384}
   m_Father: {fileID: 368820762}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
@@ -15215,7 +15216,7 @@ GameObject:
   - component: {fileID: 701064421}
   - component: {fileID: 701064422}
   m_Layer: 0
-  m_Name: Digicode
+  m_Name: "Digicode S\xE9cu"
   m_TagString: Digicode
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15234,8 +15235,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1057176075}
-  - {fileID: 1729917141}
   - {fileID: 1646923952}
+  - {fileID: 1729917141}
   - {fileID: 2126292928}
   - {fileID: 1508587784}
   - {fileID: 1903166261}
@@ -15534,7 +15535,7 @@ GameObject:
   - component: {fileID: 731297401}
   - component: {fileID: 731297404}
   m_Layer: 0
-  m_Name: Fusible_1
+  m_Name: Fusible 1
   m_TagString: Fusible
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16104,7 +16105,7 @@ GameObject:
   m_Component:
   - component: {fileID: 821016116}
   m_Layer: 0
-  m_Name: touches
+  m_Name: Touches
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16814,7 +16815,7 @@ GameObject:
   - component: {fileID: 948525521}
   - component: {fileID: 948525525}
   m_Layer: 0
-  m_Name: keyCoffre
+  m_Name: Carte Coffre
   m_TagString: Key
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16833,7 +16834,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 557535021}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!135 &948525521
 SphereCollider:
@@ -17550,7 +17551,7 @@ PrefabInstance:
       objectReference: {fileID: 951629222}
     - target: {fileID: 1432441559323142185, guid: a44c97fb126c0944d8933b09732f3ff8, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1432441559323142185, guid: a44c97fb126c0944d8933b09732f3ff8, type: 3}
       propertyPath: m_LocalScale.x
@@ -18008,7 +18009,7 @@ GameObject:
   - component: {fileID: 1057176077}
   - component: {fileID: 1057176076}
   m_Layer: 0
-  m_Name: moniteur
+  m_Name: Moniteur
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18311,7 +18312,7 @@ GameObject:
   - component: {fileID: 1088479300}
   - component: {fileID: 1088479299}
   m_Layer: 0
-  m_Name: corp
+  m_Name: Corps
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18522,7 +18523,6 @@ Transform:
   m_Children:
   - {fileID: 7803133981483447502}
   - {fileID: 731297403}
-  - {fileID: 1238969384}
   m_Father: {fileID: 557535021}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -19461,7 +19461,7 @@ GameObject:
   - component: {fileID: 1238969382}
   - component: {fileID: 1238969381}
   m_Layer: 0
-  m_Name: Fusible_1 (1)
+  m_Name: Fusible 2
   m_TagString: Fusible
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19537,13 +19537,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1238969380}
-  m_LocalRotation: {x: -0.6989461, y: -0.107118346, z: -0.107118346, w: 0.6989461}
-  m_LocalPosition: {x: 65.85208, y: 17.691668, z: -32.858818}
-  m_LocalScale: {x: 2.4579394, y: 7.307451, z: 2.457939}
+  m_LocalRotation: {x: -0.4184854, y: -0.56997365, z: -0.56997365, w: 0.4184854}
+  m_LocalPosition: {x: 95.7785, y: 17.650093, z: 25.804092}
+  m_LocalScale: {x: 2.4579391, y: 7.3074493, z: 2.457939}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1123842602}
-  m_RootOrder: 2
+  m_Father: {fileID: 681397192}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: -17.426}
 --- !u!1001 &1255005186
 PrefabInstance:
@@ -19713,7 +19713,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2947210492821104482, guid: a0b4a8bbeeaa6e749b0ebf9db474dba1, type: 3}
       propertyPath: m_Name
-      value: cimac
+      value: Enable
       objectReference: {fileID: 0}
     - target: {fileID: 2947210493312853306, guid: a0b4a8bbeeaa6e749b0ebf9db474dba1, type: 3}
       propertyPath: m_RootOrder
@@ -19773,7 +19773,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2947210493791621487, guid: a0b4a8bbeeaa6e749b0ebf9db474dba1, type: 3}
       propertyPath: m_Name
-      value: trace
+      value: Trace
       objectReference: {fileID: 0}
     - target: {fileID: 2947210493914782508, guid: a0b4a8bbeeaa6e749b0ebf9db474dba1, type: 3}
       propertyPath: m_text
@@ -20090,7 +20090,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4924653228325967123, guid: dd94c6355bcdb43469d485fafb7b88e2, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4924653228325967123, guid: dd94c6355bcdb43469d485fafb7b88e2, type: 3}
       propertyPath: m_LocalPosition.x
@@ -21343,7 +21343,7 @@ GameObject:
   - component: {fileID: 1513550728}
   - component: {fileID: 1513550727}
   m_Layer: 0
-  m_Name: porte
+  m_Name: Porte
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -22071,7 +22071,7 @@ GameObject:
   - component: {fileID: 1646923954}
   - component: {fileID: 1646923953}
   m_Layer: 0
-  m_Name: corp
+  m_Name: Coprs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -22090,7 +22090,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 701064420}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1646923953
 BoxCollider:
@@ -22436,7 +22436,7 @@ GameObject:
   - component: {fileID: 1687835002}
   - component: {fileID: 1687835001}
   m_Layer: 0
-  m_Name: Digicode (1)
+  m_Name: Digicode TP
   m_TagString: Digicode
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -22817,7 +22817,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1729917141}
   m_Layer: 0
-  m_Name: touches
+  m_Name: Touches
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -22846,7 +22846,7 @@ Transform:
   - {fileID: 1149344612}
   - {fileID: 1288385918}
   m_Father: {fileID: 701064420}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1733369553
 GameObject:
@@ -23696,7 +23696,7 @@ GameObject:
   - component: {fileID: 1903166259}
   - component: {fileID: 1903166258}
   m_Layer: 0
-  m_Name: porte (1)
+  m_Name: "Porte S\xE9cu"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -24051,7 +24051,7 @@ GameObject:
   - component: {fileID: 1939318301}
   - component: {fileID: 1939318300}
   m_Layer: 0
-  m_Name: PorteSortie
+  m_Name: Porte Sortie
   m_TagString: Boitier_Porte_C
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -24072,7 +24072,7 @@ Transform:
   - {fileID: 259001020}
   - {fileID: 2102976006}
   m_Father: {fileID: 162103284}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!65 &1939318300
 BoxCollider:
@@ -24235,11 +24235,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1714730673246619952, guid: 5f023aa0d7ce1794cb5d5b60e17139d6, type: 3}
       propertyPath: m_Name
-      value: switchSecu
+      value: Switch Secu
       objectReference: {fileID: 0}
     - target: {fileID: 1714730673246619955, guid: 5f023aa0d7ce1794cb5d5b60e17139d6, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1714730673246619955, guid: 5f023aa0d7ce1794cb5d5b60e17139d6, type: 3}
       propertyPath: m_LocalScale.x
@@ -24986,7 +24986,7 @@ GameObject:
   - component: {fileID: 2084348449}
   - component: {fileID: 2084348448}
   m_Layer: 0
-  m_Name: text
+  m_Name: Texte
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25233,7 +25233,7 @@ GameObject:
   - component: {fileID: 2093214438}
   - component: {fileID: 2093214437}
   m_Layer: 0
-  m_Name: porte (1)
+  m_Name: Porte
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25329,7 +25329,7 @@ GameObject:
   - component: {fileID: 2093414659}
   - component: {fileID: 2093414658}
   m_Layer: 5
-  m_Name: cursor
+  m_Name: Cursor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25503,7 +25503,7 @@ GameObject:
   - component: {fileID: 2102976008}
   - component: {fileID: 2102976007}
   m_Layer: 0
-  m_Name: porte
+  m_Name: Porte
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25599,7 +25599,7 @@ GameObject:
   - component: {fileID: 2126292930}
   - component: {fileID: 2126292929}
   m_Layer: 0
-  m_Name: text
+  m_Name: Texte
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26330,7 +26330,7 @@ GameObject:
   m_Component:
   - component: {fileID: 925614529669818990}
   m_Layer: 0
-  m_Name: classe
+  m_Name: Classe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26661,7 +26661,7 @@ Transform:
   - {fileID: 1533113272}
   - {fileID: 1172195002}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &930342723215386065
 Transform:
@@ -27483,6 +27483,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 368820762}
     m_Modifications:
+    - target: {fileID: 91604400776354703, guid: 190e6256e44e9b44389ba694fd11dafe, type: 3}
+      propertyPath: m_Name
+      value: Interface
+      objectReference: {fileID: 0}
+    - target: {fileID: 709925466069626296, guid: 190e6256e44e9b44389ba694fd11dafe, type: 3}
+      propertyPath: m_Name
+      value: Circuit
+      objectReference: {fileID: 0}
     - target: {fileID: 1161940727897347881, guid: 190e6256e44e9b44389ba694fd11dafe, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -27527,9 +27535,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1769698892064207890, guid: 190e6256e44e9b44389ba694fd11dafe, type: 3}
+      propertyPath: m_Name
+      value: Place
+      objectReference: {fileID: 0}
     - target: {fileID: 1975912843011231123, guid: 190e6256e44e9b44389ba694fd11dafe, type: 3}
       propertyPath: m_Name
-      value: pcb
+      value: PCB
+      objectReference: {fileID: 0}
+    - target: {fileID: 2028537513393390246, guid: 190e6256e44e9b44389ba694fd11dafe, type: 3}
+      propertyPath: m_Name
+      value: Plaque
       objectReference: {fileID: 0}
     - target: {fileID: 3146634886837736258, guid: 190e6256e44e9b44389ba694fd11dafe, type: 3}
       propertyPath: m_IsActive
@@ -28311,7 +28327,7 @@ Transform:
   - {fileID: 3154743166878088848}
   - {fileID: 675019418}
   m_Father: {fileID: 162103284}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!23 &2323291225252818371
 MeshRenderer:
