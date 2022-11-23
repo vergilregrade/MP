@@ -1,23 +1,23 @@
 Using pre-set license
 Built from '2021.3/staging' branch; Version is '2021.3.11f1 (0a5ca18544bf) revision 679073'; Using compiler version '192829333'; Build Type 'Release'
-OS: 'Windows 11  (10.0.25236) 64bit Core' Language: 'en' Physical Memory: 8025 MB
+OS: 'Windows 10  (10.0.19045) 64bit Core' Language: 'en' Physical Memory: 8124 MB
 BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
 
 COMMAND LINE ARGUMENTS:
-C:\Program Files\Unity\Hub\Editor\2021.3.11f1\Editor\Unity.exe
+X:\Unity\2021.3.11f1\Editor\Unity.exe
 -adb2
 -batchMode
 -noUpm
 -name
 AssetImportWorker3
 -projectPath
-C:/Users/huawei/Downloads/MP/MP code
+E:/MP/MP code
 -logFile
 Logs/AssetImportWorker3.log
 -srvPort
-56559
-Successfully changed project path to: C:/Users/huawei/Downloads/MP/MP code
-C:/Users/huawei/Downloads/MP/MP code
+63802
+Successfully changed project path to: E:/MP/MP code
+E:/MP/MP code
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
     "memorysetup-bucket-allocator-granularity=16"
     "memorysetup-bucket-allocator-bucket-count=8"
@@ -47,117 +47,133 @@ C:/Users/huawei/Downloads/MP/MP code
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Refreshing native plugins compatible for Editor in 85.42 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 193.26 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2021.3.11f1 (0a5ca18544bf)
-[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2021.3.11f1/Editor/Data/Resources/UnitySubsystems
-[Subsystems] Discovering subsystems at path C:/Users/huawei/Downloads/MP/MP code/Assets
+[Subsystems] Discovering subsystems at path X:/Unity/2021.3.11f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path E:/MP/MP code/Assets
 GfxDevice: creating device client; threaded=0; jobified=0
 Direct3D:
-    Version:  Direct3D 11.0 [level 11.1]
-    Renderer: Intel(R) UHD Graphics (ID=0x9b41)
-    Vendor:   Intel
-    VRAM:     4012 MB
-    Driver:   27.20.100.8984
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: NVIDIA GeForce GTX 750 (ID=0x1381)
+    Vendor:   NVIDIA
+    VRAM:     2007 MB
+    Driver:   31.0.15.1694
 Initialize mono
-Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2021.3.11f1/Editor/Data/Managed'
-Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2021.3.11f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
-Mono config path = 'C:/Program Files/Unity/Hub/Editor/2021.3.11f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56024
+Mono path[0] = 'X:/Unity/2021.3.11f1/Editor/Data/Managed'
+Mono path[1] = 'X:/Unity/2021.3.11f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'X:/Unity/2021.3.11f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56564
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
-Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.11f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
-Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.11f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.11f1/Editor/Data/PlaybackEngines/MetroSupport/UnityEditor.UWP.Extensions.dll
-Registered in 0.011167 seconds.
+Register platform support module: X:/Unity/2021.3.11f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
+Register platform support module: X:/Unity/2021.3.11f1/Editor/Data/PlaybackEngines/MacStandaloneSupport/UnityEditor.OSXStandalone.Extensions.dll
+Register platform support module: X:/Unity/2021.3.11f1/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.dll
+Register platform support module: X:/Unity/2021.3.11f1/Editor/Data/PlaybackEngines/AppleTVSupport/UnityEditor.AppleTV.Extensions.dll
+Register platform support module: X:/Unity/2021.3.11f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Register platform support module: X:/Unity/2021.3.11f1/Editor/Data/PlaybackEngines/LinuxStandaloneSupport/UnityEditor.LinuxStandalone.Extensions.dll
+Register platform support module: X:/Unity/2021.3.11f1/Editor/Data/PlaybackEngines/MetroSupport/UnityEditor.UWP.Extensions.dll
+Registered in 0.010666 seconds.
 Native extension for UWP target not found
+Native extension for LinuxStandalone target not found
 Native extension for WindowsStandalone target not found
+[usbmuxd] Start listen thread
+[usbmuxd] Listen thread started
+[usbmuxd] Send listen message
+Native extension for AppleTV target not found
+[usbmuxd] Start listen thread
+Native extension for iOS target not found
+[usbmuxd] Listen thread started
+[usbmuxd] Send listen message
+Native extension for OSXStandalone target not found
 Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 69.86 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 51.05 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.268 seconds
+- Completed reload, in  0.800 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1269ms)
-		BeginReloadAssembly (166ms)
+	ReloadAssembly (800ms)
+		BeginReloadAssembly (133ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (2ms)
-		EndReloadAssembly (822ms)
-			LoadAssemblies (162ms)
+			CreateAndSetChildDomain (1ms)
+		EndReloadAssembly (537ms)
+			LoadAssemblies (136ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (177ms)
+			SetupTypeCache (134ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (60ms)
-			SetupLoadedEditorAssemblies (513ms)
+			RebuildScriptCaches (34ms)
+			SetupLoadedEditorAssemblies (310ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (33ms)
-				SetLoadedEditorAssemblies (1ms)
-				RefreshPlugins (70ms)
+				InitializePlatformSupportModulesInManaged (41ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (51ms)
 				BeforeProcessingInitializeOnLoad (1ms)
-				ProcessInitializeOnLoadAttributes (294ms)
-				ProcessInitializeOnLoadMethodAttributes (114ms)
+				ProcessInitializeOnLoadAttributes (161ms)
+				ProcessInitializeOnLoadMethodAttributes (56ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.006783 seconds.
+Registered in 0.003834 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for UWP target not found
+Native extension for LinuxStandalone target not found
 Native extension for WindowsStandalone target not found
+Native extension for AppleTV target not found
+Native extension for iOS target not found
+Native extension for OSXStandalone target not found
 Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 0.70 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 0.68 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-[ScriptCompilation] NOT recompiling all scripts because this is an import worker process. Reason to compile was: Define symbols changed
 Mono: successfully reloaded assembly
-- Completed reload, in  1.246 seconds
+- Completed reload, in  1.122 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1247ms)
-		BeginReloadAssembly (149ms)
+	ReloadAssembly (1123ms)
+		BeginReloadAssembly (176ms)
 			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (8ms)
+			DisableScriptedObjects (7ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (23ms)
-		EndReloadAssembly (945ms)
-			LoadAssemblies (101ms)
+		EndReloadAssembly (797ms)
+			LoadAssemblies (140ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (244ms)
-			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (60ms)
-			SetupLoadedEditorAssemblies (501ms)
+			SetupTypeCache (239ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (53ms)
+			SetupLoadedEditorAssemblies (374ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (11ms)
+				InitializePlatformSupportModulesInManaged (32ms)
 				SetLoadedEditorAssemblies (1ms)
 				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (75ms)
-				ProcessInitializeOnLoadAttributes (362ms)
-				ProcessInitializeOnLoadMethodAttributes (43ms)
-				AfterProcessingInitializeOnLoad (8ms)
+				BeforeProcessingInitializeOnLoad (59ms)
+				ProcessInitializeOnLoadAttributes (242ms)
+				ProcessInitializeOnLoadMethodAttributes (33ms)
+				AfterProcessingInitializeOnLoad (6ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (8ms)
+			AwakeInstancesAfterBackupRestoration (9ms)
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.06 seconds
-Refreshing native plugins compatible for Editor in 0.59 ms, found 2 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.11 seconds
+Refreshing native plugins compatible for Editor in 0.61 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 1958 Unused Serialized files (Serialized files now loaded: 0)
 Unloading 31 unused Assets / (1.3 MB). Loaded Objects now: 2418.
 Memory consumption went from 91.8 MB to 90.5 MB.
-Total: 4.054400 ms (FindLiveObjects: 0.232600 ms CreateObjectMapping: 0.132600 ms MarkObjects: 3.373300 ms  DeleteObjects: 0.314200 ms)
+Total: 3.326300 ms (FindLiveObjects: 0.189100 ms CreateObjectMapping: 0.085900 ms MarkObjects: 2.722200 ms  DeleteObjects: 0.328200 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
   custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
   custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
   custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
@@ -165,31 +181,437 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 10293.156429 seconds.
-  path: Assets/Modèles 3D/Brick Project Studio/Apartment Kit/_Prefabs/Furniture/Bedroom/Bed_Apt_02_01.prefab
-  artifactKey: Guid(79723f7a04c42fa4cb0fefb4f7686381) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Modèles 3D/Brick Project Studio/Apartment Kit/_Prefabs/Furniture/Bedroom/Bed_Apt_02_01.prefab using Guid(79723f7a04c42fa4cb0fefb4f7686381) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bfbebbad48cd1f95f2c34e2f5df6b3c8') in 0.784941 seconds 
+  Time since last request: 181386.755502 seconds.
+  path: Assets/Modèles 3D/Furniture/Source/Mesh/3Seat3.fbx
+  artifactKey: Guid(b07a91327abd3554ab170725ff8ae7a6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modèles 3D/Furniture/Source/Mesh/3Seat3.fbx using Guid(b07a91327abd3554ab170725ff8ae7a6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '81a6ded99914114f38a86c22da03dd1e') in 0.300638 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 2.954082 seconds.
-  path: Assets/Modèles 3D/Brick Project Studio/Apartment Kit/_Prefabs/Furniture/Wine Cabinet/BarCabinet_Apt_02.prefab
-  artifactKey: Guid(86ae21e881865b04f8548c4edade5fd2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Modèles 3D/Brick Project Studio/Apartment Kit/_Prefabs/Furniture/Wine Cabinet/BarCabinet_Apt_02.prefab using Guid(86ae21e881865b04f8548c4edade5fd2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '930eb02d3e1eb7ab9e79dd37ff2500ec') in 0.087227 seconds 
+  Time since last request: 0.000029 seconds.
+  path: Assets/Modèles 3D/Furniture/Source/Mesh/Closet3.fbx
+  artifactKey: Guid(924fa25af5f31b14abb039f25dab6ec9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modèles 3D/Furniture/Source/Mesh/Closet3.fbx using Guid(924fa25af5f31b14abb039f25dab6ec9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1c2e6cba90bac4b69ad16e8a5a5c7420') in 0.086015 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000038 seconds.
+  path: Assets/Modèles 3D/Furniture/Source/Mesh/Fotel2.fbx
+  artifactKey: Guid(327bca4c4dcd00f45a6d843fc77fda6a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modèles 3D/Furniture/Source/Mesh/Fotel2.fbx using Guid(327bca4c4dcd00f45a6d843fc77fda6a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eca49234cf6fb257bc4f283d4a652a16') in 0.056848 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.005516 seconds.
+  path: Assets/Modèles 3D/Furniture/Source/Mesh/MirrorComode.fbx
+  artifactKey: Guid(bbf5add6f97674e4f9d710d2027584f4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modèles 3D/Furniture/Source/Mesh/MirrorComode.fbx using Guid(bbf5add6f97674e4f9d710d2027584f4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '50f9d32fdd7be515ae54cee25a7ac8cd') in 0.070205 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Modèles 3D/Furniture/Source/Mesh/Couch.fbx
+  artifactKey: Guid(b3d2d47cdc25dcc4090c4ba35dcf72ff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modèles 3D/Furniture/Source/Mesh/Couch.fbx using Guid(b3d2d47cdc25dcc4090c4ba35dcf72ff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bbbf8dbaaccbf11121222b610d79ae71') in 0.061822 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 4.845437 seconds.
+  path: Assets/Modèles 3D/Furniture/Prefabs/3Seat3.prefab
+  artifactKey: Guid(d9e6213ffc5943b4db8396985aa3f894) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modèles 3D/Furniture/Prefabs/3Seat3.prefab using Guid(d9e6213ffc5943b4db8396985aa3f894) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '315e037b4af6c08145e552b0a22a7011') in 0.056100 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Modèles 3D/Furniture/Prefabs/Closet3.prefab
+  artifactKey: Guid(c24cdd6fcf1f09248832426ea5388c7f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modèles 3D/Furniture/Prefabs/Closet3.prefab using Guid(c24cdd6fcf1f09248832426ea5388c7f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5d5d607bd7e16bcb6e534712754a6cda') in 0.049944 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000113 seconds.
+  path: Assets/Modèles 3D/Furniture/Prefabs/3seat4.prefab
+  artifactKey: Guid(245712dbd63f6f94e8467250c1caedd9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modèles 3D/Furniture/Prefabs/3seat4.prefab using Guid(245712dbd63f6f94e8467250c1caedd9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '49dd3d07e47829f30eaaa0978ed3af15') in 0.078527 seconds 
 ========================================================================
 Received Import Request.
   Time since last request: 0.000026 seconds.
-  path: Assets/Modèles 3D/Brick Project Studio/Apartment Kit/_Prefabs/Furniture/Wine Cabinet/BarCabinet_Apt_02_Center.prefab
-  artifactKey: Guid(8915be8858dae144eb1415e1fada3eda) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Modèles 3D/Brick Project Studio/Apartment Kit/_Prefabs/Furniture/Wine Cabinet/BarCabinet_Apt_02_Center.prefab using Guid(8915be8858dae144eb1415e1fada3eda) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '832678e63755639922eeb3168ca4741a') in 0.072969 seconds 
+  path: Assets/Modèles 3D/Furniture/Prefabs/DoubleSeat2.prefab
+  artifactKey: Guid(d5026a2aaf9d8394a9e8b886d38dbfac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modèles 3D/Furniture/Prefabs/DoubleSeat2.prefab using Guid(d5026a2aaf9d8394a9e8b886d38dbfac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '45a55140785a2a9aff468a86bc927b4e') in 0.044112 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000045 seconds.
-  path: Assets/Modèles 3D/Brick Project Studio/Apartment Kit/_Prefabs/Furniture/Wine Cabinet/BarCabinet_Apt_02_CenterTower.prefab
-  artifactKey: Guid(f0f8347ddc1d5ed4bb8d2379f9008300) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Modèles 3D/Brick Project Studio/Apartment Kit/_Prefabs/Furniture/Wine Cabinet/BarCabinet_Apt_02_CenterTower.prefab using Guid(f0f8347ddc1d5ed4bb8d2379f9008300) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ed6fe2232aba73b1b0b866ea421704a2') in 0.070126 seconds 
+  Time since last request: 0.000039 seconds.
+  path: Assets/Modèles 3D/Furniture/Prefabs/DoubleSeat.prefab
+  artifactKey: Guid(2c59b54db7aeb3d438ea1c0bf9694519) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modèles 3D/Furniture/Prefabs/DoubleSeat.prefab using Guid(2c59b54db7aeb3d438ea1c0bf9694519) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f31423b5dbee330717a22dfc458d0f42') in 0.029964 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000050 seconds.
-  path: Assets/Modèles 3D/Brick Project Studio/Apartment Kit/_Prefabs/Furniture/Wine Cabinet/BarCabinet_Apt_03_Filled.prefab
-  artifactKey: Guid(3d51d280e33c5fe4c97ae593c2292997) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Modèles 3D/Brick Project Studio/Apartment Kit/_Prefabs/Furniture/Wine Cabinet/BarCabinet_Apt_03_Filled.prefab using Guid(3d51d280e33c5fe4c97ae593c2292997) Importer(815301076,1909f56bfc062723c751e8b465ee728b) 
+  Time since last request: 0.000021 seconds.
+  path: Assets/Modèles 3D/Furniture/Prefabs/RoundTable.prefab
+  artifactKey: Guid(6f43b2566a8dcad4aa8e75125eeda38e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modèles 3D/Furniture/Prefabs/RoundTable.prefab using Guid(6f43b2566a8dcad4aa8e75125eeda38e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1cf50456a7499770dc01690eda898620') in 0.048812 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 7.426083 seconds.
+  path: Assets/Modèles 3D/Toon Furniture/Textures/BookCase_1_2.png
+  artifactKey: Guid(df59b4e423a06534e962ca3c5d664bb7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modèles 3D/Toon Furniture/Textures/BookCase_1_2.png using Guid(df59b4e423a06534e962ca3c5d664bb7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd7c1d6d39e590a384ad5834e8821eb74') in 0.089676 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Modèles 3D/Toon Furniture/Textures/Chair_8_Normal.png
+  artifactKey: Guid(03dea9d8582d9b746986e76be4161669) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modèles 3D/Toon Furniture/Textures/Chair_8_Normal.png using Guid(03dea9d8582d9b746986e76be4161669) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6caf3507183336ef2bdf247b542352a2') in 0.064748 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Modèles 3D/Toon Furniture/Textures/Chair_4_2.png
+  artifactKey: Guid(5946c4f2287173c42844d800f2243055) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modèles 3D/Toon Furniture/Textures/Chair_4_2.png using Guid(5946c4f2287173c42844d800f2243055) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8a1a0aa35c0beae1e333d4862405adba') in 0.028750 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Modèles 3D/Toon Furniture/Textures/Coffe_Table_2.png
+  artifactKey: Guid(03c895352c9eac94494bdd2067ec77d6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modèles 3D/Toon Furniture/Textures/Coffe_Table_2.png using Guid(03c895352c9eac94494bdd2067ec77d6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3028e555fe0aceb9c7859dfeb4dba4d1') in 0.042060 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000624 seconds.
+  path: Assets/Modèles 3D/Toon Furniture/Textures/BookCase_1_3.png
+  artifactKey: Guid(5772fd9db3fc9de4ab6876c4bcaa5aba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modèles 3D/Toon Furniture/Textures/BookCase_1_3.png using Guid(5772fd9db3fc9de4ab6876c4bcaa5aba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3f7f80a486cb04fc904c3d9f651b1d7f') in 0.052639 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000046 seconds.
+  path: Assets/Modèles 3D/Toon Furniture/Textures/Books_1.png
+  artifactKey: Guid(91768c11d28f9ef46861154a0e7ae4bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modèles 3D/Toon Furniture/Textures/Books_1.png using Guid(91768c11d28f9ef46861154a0e7ae4bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '56667ddef456051d7cbe3053047f084f') in 0.039912 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Modèles 3D/Toon Furniture/Textures/Couch_3_Normal.png
+  artifactKey: Guid(95686fbc735a6c748b4bfdcf0b6edcdd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modèles 3D/Toon Furniture/Textures/Couch_3_Normal.png using Guid(95686fbc735a6c748b4bfdcf0b6edcdd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9d9e092eab2fcccd7e5a8c1bda35b91c') in 0.060461 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000185 seconds.
+  path: Assets/Modèles 3D/Toon Furniture/Textures/Couch_2_2.png
+  artifactKey: Guid(8ba6900b8c150a04a84ad9029c3bff28) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modèles 3D/Toon Furniture/Textures/Couch_2_2.png using Guid(8ba6900b8c150a04a84ad9029c3bff28) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ec2be9a187f1c02e23f04428ca5a9cb3') in 0.016015 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Modèles 3D/Toon Furniture/Textures/Coffe_Table_1_2.png
+  artifactKey: Guid(6a92952067e00bc499f83883d45302ff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modèles 3D/Toon Furniture/Textures/Coffe_Table_1_2.png using Guid(6a92952067e00bc499f83883d45302ff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '43965b391190f265d59f64977a9fcc9b') in 0.053006 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000149 seconds.
+  path: Assets/Modèles 3D/Toon Furniture/Textures/Chair_4_Normal.png
+  artifactKey: Guid(3b5c3261acb8824448e6e04286ab9d6c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modèles 3D/Toon Furniture/Textures/Chair_4_Normal.png using Guid(3b5c3261acb8824448e6e04286ab9d6c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '44a789e50ce74ee12450a909f4e4a8e4') in 0.070698 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000286 seconds.
+  path: Assets/Modèles 3D/Toon Furniture/Textures/Cooker_1.png
+  artifactKey: Guid(672cacabb07f2a444adf2aab7168e0b1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modèles 3D/Toon Furniture/Textures/Cooker_1.png using Guid(672cacabb07f2a444adf2aab7168e0b1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '66ccb5149ac8164ff153ffa10ce54c9f') in 0.051803 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000033 seconds.
+  path: Assets/Modèles 3D/Toon Furniture/Textures/Chair_5_2.png
+  artifactKey: Guid(bcc5aae5ce8d2d547b6be09ec9961870) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modèles 3D/Toon Furniture/Textures/Chair_5_2.png using Guid(bcc5aae5ce8d2d547b6be09ec9961870) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e99255ecb4eb70f4742b00bda7c1b968') in 0.026329 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Modèles 3D/Toon Furniture/Textures/Couch_1_2.png
+  artifactKey: Guid(b68c466ce9ff8ae4d95a97eb7a781476) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modèles 3D/Toon Furniture/Textures/Couch_1_2.png using Guid(b68c466ce9ff8ae4d95a97eb7a781476) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '841be3be7d62d94ad2bfd7300c0153f9') in 0.048737 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Modèles 3D/Toon Furniture/Textures/Chair_3_Normal.png
+  artifactKey: Guid(3617f5a3096877442af880976b049135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modèles 3D/Toon Furniture/Textures/Chair_3_Normal.png using Guid(3617f5a3096877442af880976b049135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '69beed351fc6d10aa4bec3a5794c4a22') in 0.025258 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Modèles 3D/Toon Furniture/Textures/Coffe_Table_3_Normal.png
+  artifactKey: Guid(f2b83dafc6c0603438f2c3f5d3faf74c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modèles 3D/Toon Furniture/Textures/Coffe_Table_3_Normal.png using Guid(f2b83dafc6c0603438f2c3f5d3faf74c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '784d3701fe8dfd4cd613ba47c0a0f901') in 0.044820 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Modèles 3D/Toon Furniture/Textures/Counter_2_1.png
+  artifactKey: Guid(8324286f5b19c3040aa731a58a0b3f62) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modèles 3D/Toon Furniture/Textures/Counter_2_1.png using Guid(8324286f5b19c3040aa731a58a0b3f62) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fd6c755c9e95819a6600895c9ba09e0d') in 0.030337 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000405 seconds.
+  path: Assets/Modèles 3D/Toon Furniture/Textures/Chair_1_Normal.png
+  artifactKey: Guid(dfc0c91cc3525ba42bae3afea9be1a5b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modèles 3D/Toon Furniture/Textures/Chair_1_Normal.png using Guid(dfc0c91cc3525ba42bae3afea9be1a5b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '22578071469cade0362b38cd912c8110') in 0.033394 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Modèles 3D/Toon Furniture/Textures/Coffe_Table_1_Normal.png
+  artifactKey: Guid(728d9bba2d01e6542b9c840cc189c017) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modèles 3D/Toon Furniture/Textures/Coffe_Table_1_Normal.png using Guid(728d9bba2d01e6542b9c840cc189c017) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '83bdc59d8b657c3fe677ba508a555222') in 0.017990 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000465 seconds.
+  path: Assets/Modèles 3D/Toon Furniture/Textures/Counter_1_Normal.png
+  artifactKey: Guid(071c8e6f6d183e24d91baf3ecfc18249) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modèles 3D/Toon Furniture/Textures/Counter_1_Normal.png using Guid(071c8e6f6d183e24d91baf3ecfc18249) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '52a7109d99a8ddb8378121dc3f276c02') in 0.049217 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Modèles 3D/Toon Furniture/Textures/Cooker_1_Normal.png
+  artifactKey: Guid(3e764e674be7b7a47bb617a43c815e31) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modèles 3D/Toon Furniture/Textures/Cooker_1_Normal.png using Guid(3e764e674be7b7a47bb617a43c815e31) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f9992cd2c39fb2a21eaf4a8bdeb796ec') in 0.033278 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000760 seconds.
+  path: Assets/Modèles 3D/Toon Furniture/Textures/Chair_6.png
+  artifactKey: Guid(0f385af093b4e8e4ba7ccd2f8a95bb1b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modèles 3D/Toon Furniture/Textures/Chair_6.png using Guid(0f385af093b4e8e4ba7ccd2f8a95bb1b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7730b914207c9177a894e9189e0a586b') in 0.105638 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Modèles 3D/Toon Furniture/Textures/Coffe_Table_2_Normal.png
+  artifactKey: Guid(008c7e13e6e19c048a0046c441f9b4c6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modèles 3D/Toon Furniture/Textures/Coffe_Table_2_Normal.png using Guid(008c7e13e6e19c048a0046c441f9b4c6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8d63929fa10e1e04100b603cb74f5393') in 0.050850 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/Modèles 3D/Toon Furniture/Textures/Couch_3_3.png
+  artifactKey: Guid(ef0c721b94c824740a27f0f39a71a443) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modèles 3D/Toon Furniture/Textures/Couch_3_3.png using Guid(ef0c721b94c824740a27f0f39a71a443) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e8a8f9c4f5b68ca95a18a822498ad6a9') in 0.094476 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.842251 seconds.
+  path: Assets/Modèles 3D/Toon Furniture/Textures/Decoration_Books_1_1.png
+  artifactKey: Guid(7de86d53e67b1954ba56d17d62b16d8d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modèles 3D/Toon Furniture/Textures/Decoration_Books_1_1.png using Guid(7de86d53e67b1954ba56d17d62b16d8d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4e730539cfa506b8de9753ad2f3e7522') in 0.050003 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Modèles 3D/Toon Furniture/Textures/Headboard_1_Specular.png
+  artifactKey: Guid(57a74242e95054747a3d75c10a90ec58) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modèles 3D/Toon Furniture/Textures/Headboard_1_Specular.png using Guid(57a74242e95054747a3d75c10a90ec58) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '84a82d0265c185096d70da9edb08f54a') in 0.065781 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000665 seconds.
+  path: Assets/Modèles 3D/Toon Furniture/Textures/Pillows_1_4.png
+  artifactKey: Guid(918ebdb198c175a4cb3d209b2f45eb25) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modèles 3D/Toon Furniture/Textures/Pillows_1_4.png using Guid(918ebdb198c175a4cb3d209b2f45eb25) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cd7124b307de3b36f75de6762ce8cd34') in 0.043585 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Modèles 3D/Toon Furniture/Textures/Kitchen_Cabinet_1.png
+  artifactKey: Guid(aceaefedfb1e778408572cfdaaed2e10) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modèles 3D/Toon Furniture/Textures/Kitchen_Cabinet_1.png using Guid(aceaefedfb1e778408572cfdaaed2e10) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fdeee760a8cf5bba132829c4aea53a4d') in 0.022643 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000260 seconds.
+  path: Assets/Modèles 3D/Toon Furniture/Textures/HousePlant_1_1.png
+  artifactKey: Guid(39623965ceb147546aaa95a59aa316fe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modèles 3D/Toon Furniture/Textures/HousePlant_1_1.png using Guid(39623965ceb147546aaa95a59aa316fe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a2a5ea0dc404c08643dbaac806d8c89b') in 0.109491 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.174234 seconds.
+  path: Assets/Modèles 3D/Toon Furniture/Textures/Queen_Bed_1_2.png
+  artifactKey: Guid(98709df2f9bbf27448be647a4f0d2e8b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modèles 3D/Toon Furniture/Textures/Queen_Bed_1_2.png using Guid(98709df2f9bbf27448be647a4f0d2e8b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e92c61a4d4237eb93c874242092947a4') in 0.070316 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/Modèles 3D/Toon Furniture/Textures/Queen_Bed_2_2.png
+  artifactKey: Guid(7f797639df09b4d48818ec83b5f10fa8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modèles 3D/Toon Furniture/Textures/Queen_Bed_2_2.png using Guid(7f797639df09b4d48818ec83b5f10fa8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '097e35d09e5701ec10c1099888fc42d7') in 0.046727 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Modèles 3D/Toon Furniture/Textures/Table_1_2.png
+  artifactKey: Guid(4a11566fbb99958419e194cd6c417d12) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modèles 3D/Toon Furniture/Textures/Table_1_2.png using Guid(4a11566fbb99958419e194cd6c417d12) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '814336c0ff71940a0a5bab065962b0bc') in 0.025285 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000189 seconds.
+  path: Assets/Modèles 3D/Toon Furniture/Textures/Vase_1 Normal.png
+  artifactKey: Guid(2804daafba0068349a13da3db34191ac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modèles 3D/Toon Furniture/Textures/Vase_1 Normal.png using Guid(2804daafba0068349a13da3db34191ac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f09c2cff8a4ab6d9f1d502b077ae2ea8') in 0.076117 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Modèles 3D/Toon Furniture/Textures/Refrigerator_2_Normal.png
+  artifactKey: Guid(c917751a3bdc9374d838b81ee9197e65) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modèles 3D/Toon Furniture/Textures/Refrigerator_2_Normal.png using Guid(c917751a3bdc9374d838b81ee9197e65) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '885f09384ccdf0a46b7667b7eaebb1ad') in 0.026145 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000959 seconds.
+  path: Assets/Modèles 3D/Toon Furniture/Textures/Table_1_Normal.png
+  artifactKey: Guid(28fd2a65d4785d34f95a69ed271fd428) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modèles 3D/Toon Furniture/Textures/Table_1_Normal.png using Guid(28fd2a65d4785d34f95a69ed271fd428) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5471891ca313aa8c9b9ce7d6df9f946e') in 0.044461 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.011479 seconds.
+  path: Assets/Modèles 3D/Toon Furniture/Textures/Queen_Bed_1_Normal.png
+  artifactKey: Guid(012da6e5ececa6343ab9d801e3eb9cc6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modèles 3D/Toon Furniture/Textures/Queen_Bed_1_Normal.png using Guid(012da6e5ececa6343ab9d801e3eb9cc6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b09dba50d1ebee0b4616d2ff4a590419') in 0.018183 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000398 seconds.
+  path: Assets/Modèles 3D/Toon Furniture/Textures/Single_Bed_1_4.png
+  artifactKey: Guid(155edd04287ab3a4f9b2c2a24bc84423) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modèles 3D/Toon Furniture/Textures/Single_Bed_1_4.png using Guid(155edd04287ab3a4f9b2c2a24bc84423) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ecd11d156f47aa2d33e5100e2df3675f') in 0.037853 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Modèles 3D/Toon Furniture/Textures/Single_Bed_1_2.png
+  artifactKey: Guid(2c576c002f7c77c49a70dcec79e5752d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modèles 3D/Toon Furniture/Textures/Single_Bed_1_2.png using Guid(2c576c002f7c77c49a70dcec79e5752d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '745b6abda8237761dd8f5f3d1340151e') in 0.027927 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000686 seconds.
+  path: Assets/Modèles 3D/Toon Furniture/Textures/Single_Bed_1_Specular.png
+  artifactKey: Guid(b4948102d64ae764093f1297ecdd9942) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modèles 3D/Toon Furniture/Textures/Single_Bed_1_Specular.png using Guid(b4948102d64ae764093f1297ecdd9942) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '47a13ae64c807c9451bc5789d6781b85') in 0.046156 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000661 seconds.
+  path: Assets/Modèles 3D/Toon Furniture/Textures/Single_Bed_1_5.png
+  artifactKey: Guid(215fe34e023c4554ca9afe1325a64c0f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modèles 3D/Toon Furniture/Textures/Single_Bed_1_5.png using Guid(215fe34e023c4554ca9afe1325a64c0f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '324b00b3d34d745b2ddf95b1e57978f9') in 0.067211 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 18.340557 seconds.
+  path: Assets/Modèles 3D/Banc/maps/wood.jpg
+  artifactKey: Guid(3ac3c48044821b3438ae790f184e6cf7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modèles 3D/Banc/maps/wood.jpg using Guid(3ac3c48044821b3438ae790f184e6cf7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '061ed6b609f52eee503859774c3ec26a') in 0.033031 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Modèles 3D/Banc/maps/wpc-bej color.jpg
+  artifactKey: Guid(5e9c143e855ec5a4c98a1e593bcc0a03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modèles 3D/Banc/maps/wpc-bej color.jpg using Guid(5e9c143e855ec5a4c98a1e593bcc0a03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3b967e1c331225a6ed6ce1582231ffa4') in 0.031869 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 40.540096 seconds.
+  path: Assets/Modèles 3D/Table/table3.3ds
+  artifactKey: Guid(b698c3cff2958a742a7efb5ebe0646f0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modèles 3D/Table/table3.3ds using Guid(b698c3cff2958a742a7efb5ebe0646f0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a91b3a1e2b13f1f0ce0afee4fd4fd9da') in 0.071841 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Modèles 3D/Table/top_top_default_1_diffcol.bmp
+  artifactKey: Guid(a70d25c2ed1be5a4c8d262943ef20493) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modèles 3D/Table/top_top_default_1_diffcol.bmp using Guid(a70d25c2ed1be5a4c8d262943ef20493) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f616fe8fce77a85ca213942db467913b') in 0.021808 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 43.155985 seconds.
+  path: Assets/Modèles 3D/Brick Project Studio/_BPS Basic Assets/_Prefabs/Restroom/Fixtures/RR_MirrorFrame_01.prefab
+  artifactKey: Guid(252461d3f6f63ab4893c8eb882ee2be0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modèles 3D/Brick Project Studio/_BPS Basic Assets/_Prefabs/Restroom/Fixtures/RR_MirrorFrame_01.prefab using Guid(252461d3f6f63ab4893c8eb882ee2be0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd357545912dfd4f9237996b9ce7164d5') in 0.076306 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000063 seconds.
+  path: Assets/Modèles 3D/Brick Project Studio/_BPS Basic Assets/_Prefabs/Restroom/Fixtures/RR_ToiletPaperDispenser.prefab
+  artifactKey: Guid(c78bc6eecce41e24ea169a70169c6508) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modèles 3D/Brick Project Studio/_BPS Basic Assets/_Prefabs/Restroom/Fixtures/RR_ToiletPaperDispenser.prefab using Guid(c78bc6eecce41e24ea169a70169c6508) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f5191827908dd8ac04f8621f2116be95') in 0.075252 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Modèles 3D/Brick Project Studio/_BPS Basic Assets/_Prefabs/Restroom/Fixtures/RR_PaperTowelDispenser_01.prefab
+  artifactKey: Guid(d493d80813479394da472625132622ed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modèles 3D/Brick Project Studio/_BPS Basic Assets/_Prefabs/Restroom/Fixtures/RR_PaperTowelDispenser_01.prefab using Guid(d493d80813479394da472625132622ed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '404f64a7604a3d4680fd83b63ace08e3') in 0.082079 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Modèles 3D/Brick Project Studio/_BPS Basic Assets/_Prefabs/Restroom/Fixtures/RR_Sink_01.prefab
+  artifactKey: Guid(29ca7f8f26bee5640b6fc390d6bc4e74) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modèles 3D/Brick Project Studio/_BPS Basic Assets/_Prefabs/Restroom/Fixtures/RR_Sink_01.prefab using Guid(29ca7f8f26bee5640b6fc390d6bc4e74) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5479046e850c5d0deb859a621deb9089') in 0.029343 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 3.019835 seconds.
+  path: Assets/Modèles 3D/Brick Project Studio/_BPS Basic Assets/_Prefabs/Restroom/Signs/RR_Restroom_Woman_Sign.prefab
+  artifactKey: Guid(e44a81cddb13cac4d8ad43dcfcb329b3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modèles 3D/Brick Project Studio/_BPS Basic Assets/_Prefabs/Restroom/Signs/RR_Restroom_Woman_Sign.prefab using Guid(e44a81cddb13cac4d8ad43dcfcb329b3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a2b9cad8b20e1cc979b453e1ccda2ff3') in 0.055244 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 27.373554 seconds.
+  path: Assets/Modèles 3D/Brick Project Studio/_BPS Basic Assets/_Prefabs/Restroom/RR Build Kit/Doors/Int_RR_DoorFrame_01_Woman.prefab
+  artifactKey: Guid(f0043371e2fd88747891ddb3064283ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modèles 3D/Brick Project Studio/_BPS Basic Assets/_Prefabs/Restroom/RR Build Kit/Doors/Int_RR_DoorFrame_01_Woman.prefab using Guid(f0043371e2fd88747891ddb3064283ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fe637ca2b9f4631a8c0cb17796a448cf') in 0.403592 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 3.369069 seconds.
+  path: Assets/Modèles 3D/Brick Project Studio/_BPS Basic Assets/_Prefabs/Restroom/RR Build Kit/Walls/Int_RR_01_pillar_2x2.prefab
+  artifactKey: Guid(b17effefd1c1da643888570fb5635416) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modèles 3D/Brick Project Studio/_BPS Basic Assets/_Prefabs/Restroom/RR Build Kit/Walls/Int_RR_01_pillar_2x2.prefab using Guid(b17effefd1c1da643888570fb5635416) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ef54be7eb6cc50bf03b34c8cbfc2f5f8') in 0.023232 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Modèles 3D/Brick Project Studio/_BPS Basic Assets/_Prefabs/Restroom/RR Build Kit/Walls/Int_RR_01_Wall_02.prefab
+  artifactKey: Guid(5e1b3720a07b67c49a261a96f4842593) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modèles 3D/Brick Project Studio/_BPS Basic Assets/_Prefabs/Restroom/RR Build Kit/Walls/Int_RR_01_Wall_02.prefab using Guid(5e1b3720a07b67c49a261a96f4842593) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3bafbb4ffd405a58a6c68ebb5a015e0e') in 0.062453 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 8.315774 seconds.
+  path: Assets/Modèles 3D/Brick Project Studio/_BPS Basic Assets/_Prefabs/Restroom/RR Build Kit/Stall/RR_Stall_01_R.prefab
+  artifactKey: Guid(9c3dbc8f461d4914d9c9d995785ff708) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modèles 3D/Brick Project Studio/_BPS Basic Assets/_Prefabs/Restroom/RR Build Kit/Stall/RR_Stall_01_R.prefab using Guid(9c3dbc8f461d4914d9c9d995785ff708) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '98bb470bb2a3a166eb0cf377b331e45c') in 0.057296 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 8.043560 seconds.
+  path: Assets/Modèles 3D/Brick Project Studio/_BPS Basic Assets/_Prefabs/Legacy/Buliding FloorPlane.prefab
+  artifactKey: Guid(fc813e1d3f19bfc449ee6e7a5d8e579a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modèles 3D/Brick Project Studio/_BPS Basic Assets/_Prefabs/Legacy/Buliding FloorPlane.prefab using Guid(fc813e1d3f19bfc449ee6e7a5d8e579a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9e255761cc7068f5ecc76358c32c60ac') in 0.573242 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000465 seconds.
+  path: Assets/Modèles 3D/Brick Project Studio/_BPS Basic Assets/_Prefabs/Legacy/Large Floor.prefab
+  artifactKey: Guid(ee987da6efab07d49bc9fc59e287f08b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modèles 3D/Brick Project Studio/_BPS Basic Assets/_Prefabs/Legacy/Large Floor.prefab using Guid(ee987da6efab07d49bc9fc59e287f08b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a722c60a025bc0c38c4eaaf60b0ed83f') in 0.045851 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2.467762 seconds.
+  path: Assets/Modèles 3D/Brick Project Studio/_BPS Basic Assets/_Prefabs/Fire/Torch Flame.prefab
+  artifactKey: Guid(65b0d7b3c17d2854f87e4c8416f798fb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modèles 3D/Brick Project Studio/_BPS Basic Assets/_Prefabs/Fire/Torch Flame.prefab using Guid(65b0d7b3c17d2854f87e4c8416f798fb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '452cdcf899767f78994862afaaa92746') in 0.130356 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 3.874685 seconds.
+  path: Assets/Modèles 3D/Brick Project Studio/_BPS Basic Assets/_Prefabs/Basic Asset/Furniture_Props/BPS_Table_01.prefab
+  artifactKey: Guid(3a3c0bbe58beeff4a8d63acd5a770137) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modèles 3D/Brick Project Studio/_BPS Basic Assets/_Prefabs/Basic Asset/Furniture_Props/BPS_Table_01.prefab using Guid(3a3c0bbe58beeff4a8d63acd5a770137) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1807cacc22b44eacac8667612f152721') in 0.031426 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 6.156655 seconds.
+  path: Assets/Modèles 3D/Brick Project Studio/_BPS Basic Assets/_Prefabs/Basic Asset/BA Build Kit/Interior/Doors Frames/Int_BA_Frame_02.prefab
+  artifactKey: Guid(6b0fe008d0f2fd649ba26243e4ef0ee8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modèles 3D/Brick Project Studio/_BPS Basic Assets/_Prefabs/Basic Asset/BA Build Kit/Interior/Doors Frames/Int_BA_Frame_02.prefab using Guid(6b0fe008d0f2fd649ba26243e4ef0ee8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '11ae05bc698f9dcd6063aac657bf62db') in 0.016496 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 3.065177 seconds.
+  path: Assets/Modèles 3D/Brick Project Studio/_BPS Basic Assets/_Prefabs/Basic Asset/BA Build Kit/Interior/Int_01/Int_BA_01_Filler_02.prefab
+  artifactKey: Guid(586efc4ccee24ca4883a7542f1e326bb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modèles 3D/Brick Project Studio/_BPS Basic Assets/_Prefabs/Basic Asset/BA Build Kit/Interior/Int_01/Int_BA_01_Filler_02.prefab using Guid(586efc4ccee24ca4883a7542f1e326bb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5cee5f8c3805fbd56714364ab024f5cf') in 0.116156 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Modèles 3D/Brick Project Studio/_BPS Basic Assets/_Prefabs/Basic Asset/BA Build Kit/Interior/Int_01/Int_BA_01_Wall_01.prefab
+  artifactKey: Guid(87b837bc5f2c7db4787b6fb7663c16d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modèles 3D/Brick Project Studio/_BPS Basic Assets/_Prefabs/Basic Asset/BA Build Kit/Interior/Int_01/Int_BA_01_Wall_01.prefab using Guid(87b837bc5f2c7db4787b6fb7663c16d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4c3a66296d3aba0b1d116276f6b193a7') in 0.111335 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000054 seconds.
+  path: Assets/Modèles 3D/Brick Project Studio/_BPS Basic Assets/_Prefabs/Basic Asset/BA Build Kit/Interior/Int_01/Int_BA_01_Pillar_4x4.prefab
+  artifactKey: Guid(c83e0dcf64994e249a7357b1eb31da5a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modèles 3D/Brick Project Studio/_BPS Basic Assets/_Prefabs/Basic Asset/BA Build Kit/Interior/Int_01/Int_BA_01_Pillar_4x4.prefab using Guid(c83e0dcf64994e249a7357b1eb31da5a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6f4b562db4fb53b351cf02ba2661237b') in 0.026103 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 9.054065 seconds.
+  path: Assets/Modèles 3D/Brick Project Studio/_BPS Basic Assets/_Prefabs/Base Scene/BA_Simple Cursor.prefab
+  artifactKey: Guid(f29f229ca7700404abfeb5f8c1859d62) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Modèles 3D/Brick Project Studio/_BPS Basic Assets/_Prefabs/Base Scene/BA_Simple Cursor.prefab using Guid(f29f229ca7700404abfeb5f8c1859d62) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '000535bfddf951d000110d705d1af987') in 0.070377 seconds 
+Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+AssetImportWorker is now disconnected from the server
+Process exiting
+Exiting without the bug reporter. Application will terminate with return code 0
